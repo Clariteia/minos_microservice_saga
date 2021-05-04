@@ -4,10 +4,14 @@
 #
 # Minos framework can not be copied and/or distributed without the express
 # permission of Clariteia SL.
-from tempfile import TemporaryDirectory
+from tempfile import (
+    TemporaryDirectory,
+)
 
 import pytest
-from minos.saga import Saga
+from minos.saga import (
+    Saga,
+)
 
 
 def create_ticket_on_reply_callback(response):
