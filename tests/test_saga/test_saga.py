@@ -88,39 +88,39 @@ def f(response):
 
 def test_saga_async_callbacks_ok():
     with TemporaryDirectory() as db_name:
-        s = Saga("OrdersAdd", db_name=db_name) \
+        s = (Saga("OrdersAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("CreateOrder", a) \
                 .withCompensation("DeleteOrder", b) \
                 .onReply(c) \
-            .execute()
+            .execute())
 
         assert s.get_db_state() is None
 
 
 def test_saga_sync_callbacks_ok():
     with TemporaryDirectory() as db_name:
-        s = Saga("OrdersAdd", db_name=db_name) \
+        s = (Saga("OrdersAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("CreateOrder", d) \
                 .withCompensation("DeleteOrder", e) \
                 .onReply(f) \
-            .execute()
+            .execute())
 
         assert s.get_db_state() is None
 
 
 def test_saga_async_callbacks_ko():
     with TemporaryDirectory() as db_name:
-        s = Saga("OrdersAdd", db_name=db_name) \
+        s = (Saga("OrdersAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("Shipping", a) \
                 .withCompensation("DeleteOrder", b) \
                 .onReply(c) \
-            .execute()
+            .execute())
 
         state = s.get_db_state()
 
@@ -130,13 +130,13 @@ def test_saga_async_callbacks_ko():
 
 def test_saga_sync_callbacks_ko():
     with TemporaryDirectory() as db_name:
-        s = Saga("OrdersAdd", db_name=db_name) \
+        s = (Saga("OrdersAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("Shipping", d) \
                 .withCompensation("DeleteOrder", e) \
                 .onReply(f) \
-            .execute()
+            .execute())
 
 
         state = s.get_db_state()
@@ -147,7 +147,7 @@ def test_saga_sync_callbacks_ko():
 
 def test_saga_correct():
     with TemporaryDirectory() as db_name:
-        Saga("OrdersAdd", db_name=db_name) \
+        (Saga("OrdersAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("CreateOrder", create_order_callback) \
@@ -159,12 +159,12 @@ def test_saga_correct():
             .step() \
                 .invokeParticipant("Shopping") \
                 .withCompensation(["Failed","BlockOrder"], shipping_callback) \
-            .execute()
+            .execute())
 
 
 def test_saga_execute_all_compensations():
     with TemporaryDirectory() as db_name:
-        Saga("ItemsAdd", db_name=db_name) \
+        (Saga("ItemsAdd", db_name=db_name) \
             .start() \
             .step() \
                 .invokeParticipant("CreateOrder", create_order_callback) \
@@ -176,25 +176,25 @@ def test_saga_execute_all_compensations():
             .step() \
                 .invokeParticipant("Shipping") \
                 .withCompensation(["Failed","BlockOrder"], shipping_callback) \
-            .execute()
+            .execute())
 
 
 def test_saga_empty_step_must_throw_exception():
     with TemporaryDirectory() as db_name:
         with pytest.raises(Exception) as exc:
-            Saga("OrdersAdd2", db_name=db_name) \
-                .start() \
-                .step() \
-                    .invokeParticipant("CreateOrder") \
-                    .withCompensation("DeleteOrder") \
-                    .withCompensation("DeleteOrder2") \
-                .step() \
-                .step() \
-                    .invokeParticipant("CreateTicket") \
-                    .onReply(create_ticket_on_reply_callback) \
-                .step() \
-                    .invokeParticipant("VerifyConsumer") \
-                .execute()
+            (Saga("OrdersAdd2", db_name=db_name)
+                .start()
+                .step()
+                    .invokeParticipant("CreateOrder")
+                    .withCompensation("DeleteOrder")
+                    .withCompensation("DeleteOrder2")
+                .step()
+                .step()
+                    .invokeParticipant("CreateTicket")
+                    .onReply(create_ticket_on_reply_callback)
+                .step()
+                    .invokeParticipant("VerifyConsumer")
+                .execute())
 
         assert "The step() cannot be empty." in str(exc.value)
 
@@ -202,17 +202,17 @@ def test_saga_empty_step_must_throw_exception():
 def test_saga_wrong_step_action_must_throw_exception():
     with TemporaryDirectory() as db_name:
         with pytest.raises(Exception) as exc:
-            Saga("OrdersAdd3", db_name=db_name) \
-                .start() \
-                .step() \
-                    .invokeParticipant("CreateOrder") \
-                    .withCompensation("DeleteOrder") \
-                    .withCompensation("DeleteOrder2") \
-                .step() \
-                    .onReply(create_ticket_on_reply_callback) \
-                .step() \
-                    .invokeParticipant("VerifyConsumer") \
-                .execute()
+            (Saga("OrdersAdd3", db_name=db_name)
+                .start()
+                .step()
+                    .invokeParticipant("CreateOrder")
+                    .withCompensation("DeleteOrder")
+                    .withCompensation("DeleteOrder2")
+                .step()
+                    .onReply(create_ticket_on_reply_callback)
+                .step()
+                    .invokeParticipant("VerifyConsumer")
+                .execute())
 
         assert "The first method of the step must be .invokeParticipant(name, callback (optional))." in str(exc.value)
 
