@@ -5,10 +5,14 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 import inspect
-from asyncio import AbstractEventLoop
+from asyncio import (
+    AbstractEventLoop,
+)
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -17,13 +21,15 @@ from typing import (
     Optional,
     Union,
 )
-from uuid import uuid4
+from uuid import (
+    uuid4,
+)
 
 from .exceptions import (
-    MinosSagaException,
     MinosMultipleInvokeParticipantException,
     MinosMultipleOnReplyException,
     MinosMultipleWithCompensationException,
+    MinosSagaException,
 )
 
 if TYPE_CHECKING:
