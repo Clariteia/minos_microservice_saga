@@ -5,14 +5,10 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 import inspect
-from asyncio import (
-    AbstractEventLoop,
-)
+from asyncio import AbstractEventLoop
 from typing import (
     TYPE_CHECKING,
     Any,
@@ -21,13 +17,9 @@ from typing import (
     Optional,
     Union,
 )
-from uuid import (
-    uuid4,
-)
+from uuid import uuid4
 
-from .exceptions import (
-    MinosSagaException,
-)
+from .exceptions import MinosSagaException
 
 if TYPE_CHECKING:
     from .step_manager import MinosSagaStepManager
@@ -160,15 +152,13 @@ class SagaStep(object):
         :param callback: TODO
         :return: TODO
         """
-        self._with_compensation = (
-            {
-                "id": str(uuid4()),
-                "type": "withCompensation",
-                "method": self.execute_with_compensation,
-                "name": name,
-                "callback": callback,
-            }
-        )
+        self._with_compensation = {
+            "id": str(uuid4()),
+            "type": "withCompensation",
+            "method": self.execute_with_compensation,
+            "name": name,
+            "callback": callback,
+        }
 
         return self
 
