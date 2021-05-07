@@ -15,6 +15,7 @@ from unittest.mock import (
 )
 
 from minos.saga import (
+    MinosSagaStorage,
     Saga,
     SagaStatus,
     SagaStep,
@@ -53,7 +54,7 @@ class TestSagaExecution(unittest.TestCase):
             .commit()
         )
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+        with MinosSagaStorage.from_execution(execution) as storage:
             observed = storage.get_state()
 
         expected = {"current_step": None, "operations": {}, "saga": "OrdersAdd"}
@@ -70,7 +71,7 @@ class TestSagaExecution(unittest.TestCase):
                 .commit()
             )
             execution = saga.build_execution(self.DB_PATH)
-            with execution.storage as storage:
+            with MinosSagaStorage.from_execution(execution) as storage:
                 execution.execute(storage)
                 observed = storage.get_state()
 
@@ -100,7 +101,7 @@ class TestSagaExecution(unittest.TestCase):
             .commit()
         )
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+        with MinosSagaStorage.from_execution(execution) as storage:
             execution.execute(storage)
 
             state = storage.get_state()
@@ -117,7 +118,7 @@ class TestSagaExecution(unittest.TestCase):
             .commit()
         )
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+        with MinosSagaStorage.from_execution(execution) as storage:
             execution.execute(storage)
 
             state = storage.get_state()
@@ -139,7 +140,7 @@ class TestSagaExecution(unittest.TestCase):
             .commit()
         )
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+        with MinosSagaStorage.from_execution(execution) as storage:
             state = storage.get_state()
 
         self.assertEqual({"current_step": None, "operations": {}, "saga": "OrdersAdd"}, state)
@@ -160,7 +161,8 @@ class TestSagaExecution(unittest.TestCase):
             .commit()
         )
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+
+        with MinosSagaStorage.from_execution(execution) as storage:
             execution.execute(storage)
 
             state = storage.get_state()
