@@ -173,7 +173,7 @@ class TestSagaExecution(unittest.TestCase):
     def test_pause(self):
         saga = Saga("ItemsAdd").step(SagaStep().invoke_participant("CreateOrder")).commit()
         execution = saga.build_execution(self.DB_PATH)
-        with execution.storage as storage:
+        with MinosSagaStorage.from_execution(execution) as storage:
             execution.execute(storage)
             self.assertEqual(SagaStatus.Paused, execution.status)
 
