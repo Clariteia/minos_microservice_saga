@@ -12,6 +12,7 @@ from typing import (
 
 from ...exceptions import (
     MinosSagaException,
+    MinosSagaPausedExecutionStepException,
 )
 from ..context import (
     SagaContext,
@@ -36,7 +37,7 @@ class InvokeParticipantExecutor(LocalExecutor):
 
         self.storage.create_operation(operation)
         try:
-            context = self._invoke_participant(operation["name"])
+            context = self.launch_command(operation["name"])
         except MinosSagaException as error:
             self.storage.operation_error_db(operation["id"], error)
             raise error
@@ -56,9 +57,12 @@ class InvokeParticipantExecutor(LocalExecutor):
         return context
 
     @staticmethod
-    def _invoke_participant(name) -> SagaContext:
-        if name == "Shipping":
-            raise MinosSagaException("invokeParticipantTest exception")
+    def launch_command(*args, **kwargs) -> SagaContext:
+        """TODO
 
-        # noinspection PyTypeChecker
-        return "_invokeParticipant Response"
+        :param args: TODO
+        :param kwargs: TODO
+        :return: TODO
+        """
+        # FIXME: This would be replaced with the corresponding broker call
+        raise MinosSagaPausedExecutionStepException()

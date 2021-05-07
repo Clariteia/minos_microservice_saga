@@ -16,6 +16,8 @@ from unittest.mock import (
 
 from minos.saga import (
     Saga,
+    SagaStatus,
+    SagaStep,
 )
 from tests.callbacks import (
     a_callback,
@@ -73,32 +75,16 @@ class TestSagaExecution(unittest.TestCase):
                 observed = storage.get_state()
 
         expected = {
-            "current_step": "uuid-4",
+            "current_step": "uuid-0",
             "operations": {
                 "uuid-0": {
-                    "error": "",
+                    "error": "There was a pause while " "'SagaExecutionStep' was executing.",
                     "id": "uuid-0",
                     "name": "CreateOrder",
-                    "response": "_invokeParticipant Response",
+                    "response": "",
                     "status": 0,
                     "type": "invokeParticipant",
-                },
-                "uuid-3": {
-                    "error": "",
-                    "id": "uuid-3",
-                    "name": "CreateOrder",
-                    "response": "create_order_callback response!!!!",
-                    "status": 0,
-                    "type": "invokeParticipant_callback",
-                },
-                "uuid-4": {
-                    "error": "",
-                    "id": "uuid-4",
-                    "name": "",
-                    "response": "async create_ticket_on_reply_callback " "response!!!!",
-                    "status": 0,
-                    "type": "onReply",
-                },
+                }
             },
             "saga": "OrdersAdd",
         }
@@ -120,7 +106,6 @@ class TestSagaExecution(unittest.TestCase):
             state = storage.get_state()
 
             assert state is not None
-            assert list(state["operations"].values())[0]["error"] == "invokeParticipantTest exception"
 
     def test_sync_callbacks_ko(self):
         saga = (
@@ -136,9 +121,7 @@ class TestSagaExecution(unittest.TestCase):
             execution.execute(storage)
 
             state = storage.get_state()
-
             assert state is not None
-            assert list(state["operations"].values())[0]["error"] == "invokeParticipantTest exception"
 
     def test_correct(self):
         saga = (
@@ -184,15 +167,13 @@ class TestSagaExecution(unittest.TestCase):
 
             assert state is not None
             assert list(state["operations"].values())[0]["type"] == "invokeParticipant"
-            assert list(state["operations"].values())[1]["type"] == "invokeParticipant_callback"
-            assert list(state["operations"].values())[2]["type"] == "onReply"
-            assert list(state["operations"].values())[3]["type"] == "invokeParticipant"
-            assert list(state["operations"].values())[4]["type"] == "onReply"
-            assert list(state["operations"].values())[5]["type"] == "invokeParticipant"
-            assert list(state["operations"].values())[6]["type"] == "withCompensation"
-            assert list(state["operations"].values())[7]["type"] == "withCompensation_callback"
-            assert list(state["operations"].values())[8]["type"] == "withCompensation"
-            assert list(state["operations"].values())[9]["type"] == "withCompensation_callback"
+
+    def test_pause(self):
+        saga = Saga("ItemsAdd").step(SagaStep().invoke_participant("CreateOrder")).commit()
+        execution = saga.build_execution(self.DB_PATH)
+        with execution.storage as storage:
+            execution.execute(storage)
+            self.assertEqual(SagaStatus.Paused, execution.status)
 
 
 if __name__ == "__main__":
