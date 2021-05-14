@@ -1,0 +1,61 @@
+saga.executions package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   saga.executions.executors
+
+Submodules
+----------
+
+saga.executions.context module
+------------------------------
+
+.. automodule:: saga.executions.context
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saga.executions.saga module
+---------------------------
+
+.. automodule:: saga.executions.saga
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saga.executions.status module
+-----------------------------
+
+.. automodule:: saga.executions.status
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saga.executions.step module
+---------------------------
+
+.. automodule:: saga.executions.step
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+saga.executions.storage module
+------------------------------
+
+.. automodule:: saga.executions.storage
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: saga.executions
+   :members:
+   :undoc-members:
+   :show-inheritance:
