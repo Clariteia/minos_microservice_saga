@@ -1,0 +1,25 @@
+minos.saga package
+==================
+
+.. automodule:: minos.saga
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.saga.definitions
+   minos.saga.executions
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.saga.exceptions
+   minos.saga.manager
