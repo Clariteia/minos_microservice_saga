@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.4 documentation</title>
+  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.5 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -216,7 +216,7 @@
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">exec_one</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-            <span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">operation</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="n">context</span><span class="p">[</span><span class="n">operation</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
 

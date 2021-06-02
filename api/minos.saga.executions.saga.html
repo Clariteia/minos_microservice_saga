@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.saga module &mdash; Minos Microservice Saga 0.0.4 documentation</title>
+  <title>minos.saga.executions.saga module &mdash; Minos Microservice Saga 0.0.5 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -253,11 +253,16 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.saga.SagaExecution.from_saga">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_saga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/saga.html#SagaExecution.from_saga"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.saga.SagaExecution.from_saga" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_saga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/saga.html#SagaExecution.from_saga"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.saga.SagaExecution.from_saga" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a new instance from a <code class="docutils literal notranslate"><span class="pre">Saga</span></code> object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>definition</strong> (<a class="reference internal" href="minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga" title="minos.saga.definitions.saga.Saga"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.saga.Saga</span></code></a>) – The definition of the saga.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>definition</strong> (<a class="reference internal" href="minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga" title="minos.saga.definitions.saga.Saga"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.saga.Saga</span></code></a>) – The definition of the saga.</p></li>
+<li><p><strong>context</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.executions.context.html#minos.saga.executions.context.SagaContext" title="minos.saga.executions.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.context.SagaContext</span></code></a>]) – Initial saga execution context. If not provided, then a new empty context is created.</p></li>
+<li><p><strong>args</strong> – Additional positional arguments.</p></li>
+<li><p><strong>kwargs</strong> – Additional named arguments.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference internal" href="#minos.saga.executions.saga.SagaExecution" title="minos.saga.executions.saga.SagaExecution"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.saga.SagaExecution</span></code></a></p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.4 documentation</title>
+  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.5 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -272,17 +272,23 @@
         <span class="k">return</span> <span class="n">instance</span></div>
 
 <div class="viewcode-block" id="SagaExecution.from_saga"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.from_saga">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_saga</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">Saga</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaExecution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">from_saga</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">Saga</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaContext</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaExecution</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Build a new instance from a ``Saga`` object.</span>
 
 <span class="sd">        :param definition: The definition of the saga.</span>
+<span class="sd">        :param context: Initial saga execution context. If not provided, then a new empty context is created.</span>
+<span class="sd">        :param args: Additional positional arguments.</span>
+<span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: A new ``SagaExecution`` instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="p">(</span>
             <span class="n">uuid4</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span> <span class="n">uuid4</span><span class="p">(),</span> <span class="n">SagaContext</span><span class="p">(),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">SagaContext</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span> <span class="n">uuid4</span><span class="p">(),</span> <span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SagaExecution.execute"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execute the ``Saga`` definition.</span>
