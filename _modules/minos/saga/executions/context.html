@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.context &mdash; Minos Microservice Saga 0.0.5 documentation</title>
+  <title>minos.saga.executions.context &mdash; Minos Microservice Saga 0.0.6 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.5
+                0.0.6
               </div>
             
           
@@ -171,52 +171,34 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Any</span><span class="p">,</span>
     <span class="n">NoReturn</span><span class="p">,</span>
-    <span class="n">Type</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MinosModel</span><span class="p">,</span>
+    <span class="n">BucketModel</span><span class="p">,</span>
     <span class="n">MinosModelException</span><span class="p">,</span>
     <span class="n">ModelField</span><span class="p">,</span>
-    <span class="n">classname</span><span class="p">,</span>
-    <span class="n">import_module</span><span class="p">,</span>
-    <span class="n">self_or_classmethod</span><span class="p">,</span>
+    <span class="n">TypeHintBuilder</span><span class="p">,</span>
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="SagaContext"><a class="viewcode-back" href="../../../../api/minos.saga.executions.context.html#minos.saga.executions.context.SagaContext">[docs]</a><span class="k">class</span> <span class="nc">SagaContext</span><span class="p">(</span><span class="n">MinosModel</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaContext"><a class="viewcode-back" href="../../../../api/minos.saga.executions.context.html#minos.saga.executions.context.SagaContext">[docs]</a><span class="k">class</span> <span class="nc">SagaContext</span><span class="p">(</span><span class="n">BucketModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Saga Context class</span>
 
 <span class="sd">    The purpose of this class is to keep an execution state.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">types_</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
-
 <div class="viewcode-block" id="SagaContext.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.executions.context.html#minos.saga.executions.context.SagaContext.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">types_</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;types_&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">types_</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">types_</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">classname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">types_</span><span class="o">=</span><span class="n">types_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
-        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;fields&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">name</span><span class="p">:</span> <span class="n">ModelField</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">TypeHintBuilder</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">MinosModelException</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">types_</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">classname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ModelField</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
-
-    <span class="c1"># noinspection PyMethodParameters</span>
-    <span class="nd">@self_or_classmethod</span>
-    <span class="k">def</span> <span class="nf">_type_hints</span><span class="p">(</span><span class="n">self_or_cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">]:</span>
-        <span class="k">yield from</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_type_hints</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">self_or_cls</span><span class="o">.</span><span class="n">types_</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">yield</span> <span class="n">k</span><span class="p">,</span> <span class="n">import_module</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ModelField</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">TypeHintBuilder</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

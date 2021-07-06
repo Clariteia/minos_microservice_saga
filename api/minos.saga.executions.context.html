@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.context module &mdash; Minos Microservice Saga 0.0.5 documentation</title>
+  <title>minos.saga.executions.context module &mdash; Minos Microservice Saga 0.0.6 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.5
+                0.0.6
               </div>
             
           
@@ -188,7 +188,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.executions.context.</span></span><span class="sig-name descname"><span class="pre">SagaContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/context.html#SagaContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.context.SagaContext" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.dynamic.abc.DynamicModel</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">minos.common.model.dynamic.bucket.T</span></code>]</p>
 <p>Saga Context class</p>
 <p>The purpose of this class is to keep an execution state.</p>
 <dl class="py method">
@@ -197,7 +197,7 @@
 <dd><p>Class constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>kwargs</strong> – Named arguments to be set as model attributes.</p>
+<dd class="field-odd"><p><strong>fields</strong> – Dictionary that contains the <code class="docutils literal notranslate"><span class="pre">Field</span></code> instances of the model indexed by name.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -230,6 +230,11 @@
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.avro_schema">
+<span class="sig-name descname"><span class="pre">avro_schema</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[{'name':</span> <span class="pre">'SagaContext',</span> <span class="pre">'namespace':</span> <span class="pre">'minos.saga.executions.context',</span> <span class="pre">'type':</span> <span class="pre">'record',</span> <span class="pre">'fields':</span> <span class="pre">[]}]</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.avro_schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.avro_str">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">avro_str</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.avro_str" title="Permalink to this definition">¶</a></dt>
@@ -249,13 +254,47 @@
 <span class="sig-name descname"><span class="pre">classname</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'minos.saga.executions.context.SagaContext'</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.classname" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.empty">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build an empty <code class="docutils literal notranslate"><span class="pre">BucketModel</span></code> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">BucketModel</span></code> instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.fields">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fields getter</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.fields.ModelField</span></code>]</p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.fields.fields.Field</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.from_avro">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_avro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.from_avro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a new instance from the <code class="docutils literal notranslate"><span class="pre">avro</span></code> schema and data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>schema</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]]]) – The avro schema of the model.</p></li>
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]) – The avro data of the model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>~T</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A new <code class="docutils literal notranslate"><span class="pre">DynamicModel</span></code> instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,7 +308,7 @@
 <dd class="field-odd"><p><strong>raw</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>) – A bytes data.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>]]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[~T, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[~T]]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A single instance or a sequence of instances.</p>
@@ -286,7 +325,7 @@
 <dd class="field-odd"><p><strong>raw</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – A bytes data.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>]]</p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[~T, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[~T]]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A single instance or a sequence of instances.</p>
@@ -295,20 +334,43 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.from_dict">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build a new instance from a dictionary.</p>
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.from_model_type">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_model_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.from_model_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a <code class="docutils literal notranslate"><span class="pre">DynamicModel</span></code> from a <code class="docutils literal notranslate"><span class="pre">ModelType</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>d</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]) – A dictionary object.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.types.ModelType</span></code>) – <code class="docutils literal notranslate"><span class="pre">ModelType</span></code> object containing the DTO’s structure</p></li>
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]) – A dictionary containing the values to be stored on the DTO.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code></p>
+<dd class="field-even"><p>~T</p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A new <code class="docutils literal notranslate"><span class="pre">MinosModel</span></code> instance.</p>
+<dd class="field-odd"><p>A new <code class="docutils literal notranslate"><span class="pre">DynamicModel</span></code> instance.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the field names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An iterable of string values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.model_type">
+<span class="sig-name descname"><span class="pre">model_type</span></span><a class="headerlink" href="#minos.saga.executions.context.SagaContext.model_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.types.SagaContext</span></code></p>
 </dd></dl>
 
 <dl class="py method">
@@ -317,7 +379,7 @@
 <dd><p>Create a bytes representation of the given object instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>]) – A sequence of minos models.</p>
+<dd class="field-odd"><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[~T]) – A sequence of minos models.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></p>
@@ -334,7 +396,7 @@
 <dd><p>Create a bytes representation of the given object instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.abc.model.MinosModel</span></code>]) – A sequence of minos models.</p>
+<dd class="field-odd"><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[~T]) – A sequence of minos models.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -346,8 +408,8 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.types_">
-<span class="sig-name descname"><span class="pre">types_</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.types_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.context.SagaContext.type_hints">
+<span class="sig-name descname"><span class="pre">type_hints</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#minos.saga.executions.context.SagaContext.type_hints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

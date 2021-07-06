@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.step module &mdash; Minos Microservice Saga 0.0.5 documentation</title>
+  <title>minos.saga.definitions.step module &mdash; Minos Microservice Saga 0.0.6 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.5
+                0.0.6
               </div>
             
           
@@ -198,14 +198,20 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.commit">
-<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.commit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.commit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commit the current <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> on the <code class="docutils literal notranslate"><span class="pre">Saga</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga" title="minos.saga.definitions.saga.Saga">Saga</a></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Additional positional arguments.</p></li>
+<li><p><strong>kwargs</strong> – Additional named arguments.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">Saga</span></code> instance.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga" title="minos.saga.definitions.saga.Saga">Saga</a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">Saga</span></code> instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -399,10 +405,10 @@
 <dd><p>A identity function, that returns the same value without any transformation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>) – The input value.</p>
+<dd class="field-odd"><p><strong>x</strong> (<em>T</em>) – The input value.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code></p>
+<dd class="field-even"><p>T</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This function return the input value without any transformation.</p>

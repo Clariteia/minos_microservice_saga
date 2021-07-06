@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.publish &mdash; Minos Microservice Saga 0.0.5 documentation</title>
+  <title>minos.saga.executions.executors.publish &mdash; Minos Microservice Saga 0.0.6 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.5
+                0.0.6
               </div>
             
           
@@ -188,11 +188,14 @@
     <span class="n">MinosModel</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...definitions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaStepOperation</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">,</span>
+    <span class="n">MinosSagaExecutorException</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaContext</span><span class="p">,</span>
@@ -218,33 +221,30 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span> <span class="o">=</span> <span class="n">definition_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span> <span class="o">=</span> <span class="n">execution_uuid</span></div>
 
-<div class="viewcode-block" id="PublishExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">has_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+<div class="viewcode-block" id="PublishExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Exec method, that perform the publishing logic run an pre-callback function to generate the command contents.</span>
 
 <span class="sd">        :param operation: Operation to be executed.</span>
 <span class="sd">        :param context: Execution context.</span>
-<span class="sd">        :param has_reply: If `True` the command is published expecting (and waiting) a reply, otherwise a reply is not</span>
-<span class="sd">            expected (and waited)</span>
 <span class="sd">        :return: A saga context instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">context</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">request</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_one</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_publish</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">has_reply</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
-
+            <span class="n">request</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_publish</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">MinosSagaExecutorException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">exception</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">context</span></div>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">MinosModel</span><span class="p">,</span> <span class="n">has_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
-        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exec_function</span><span class="p">(</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">MinosModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_function</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">send_one</span><span class="p">,</span>
             <span class="n">topic</span><span class="o">=</span><span class="n">operation</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="n">item</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
             <span class="n">saga_uuid</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span><span class="p">),</span>
-            <span class="n">reply_topic</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">has_reply</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span><span class="p">,</span>
+            <span class="n">reply_topic</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span><span class="p">,</span>
         <span class="p">)</span></div>
 </pre></div>
 

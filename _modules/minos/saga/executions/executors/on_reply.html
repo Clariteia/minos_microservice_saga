@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.5 documentation</title>
+  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.6 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.5
+                0.0.6
               </div>
             
           
@@ -168,15 +168,21 @@
 
 <span class="sd">Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.</span>
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Optional</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">CommandReply</span><span class="p">,</span>
+    <span class="n">CommandStatus</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">...definitions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaStepOperation</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MinosCommandReplyFailedException</span><span class="p">,</span>
+    <span class="n">MinosSagaExecutorException</span><span class="p">,</span>
     <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">,</span>
     <span class="n">MinosSagaPausedExecutionStepException</span><span class="p">,</span>
 <span class="p">)</span>
@@ -193,7 +199,7 @@
 
     <span class="c1"># noinspection PyUnusedLocal</span>
 <div class="viewcode-block" id="OnReplyExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.on_reply.html#minos.saga.executions.executors.on_reply.OnReplyExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">CommandReply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execute the on reply operation.</span>
 
@@ -204,18 +210,25 @@
 <span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: An updated context instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">context</span>
-
         <span class="k">if</span> <span class="n">reply</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MinosSagaPausedExecutionStepException</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">reply</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">CommandStatus</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MinosCommandReplyFailedException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CommandReply status is not success. Obtained: </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">context</span>
 
         <span class="n">value</span> <span class="o">=</span> <span class="n">reply</span><span class="o">.</span><span class="n">items</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">exec_one</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">MinosSagaExecutorException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">exception</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
             <span class="n">context</span><span class="p">[</span><span class="n">operation</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
