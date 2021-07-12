@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.6 documentation</title>
+  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.7 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.6
+                0.0.7
               </div>
             
           
@@ -313,7 +313,7 @@
                 <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="si">!s}</span><span class="s2"> execution cannot be executed because is in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="si">!r}</span><span class="s2"> status.&quot;</span>
             <span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">SagaStatus</span><span class="o">.</span><span class="n">Errored</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">reply</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">UUID</span><span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">saga_uuid</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">reply</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">reply</span><span class="o">.</span><span class="n">saga</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">MinosSagaExecutionAlreadyExecutedException</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="si">!s}</span><span class="s2"> execution cannot be executed because is in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="si">!r}</span><span class="s2"> status.&quot;</span>
                 <span class="p">)</span>

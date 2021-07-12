@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.6 documentation</title>
+  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.7 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.6
+                0.0.7
               </div>
             
           
@@ -219,12 +219,8 @@
         <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">context</span>
 
-        <span class="n">value</span> <span class="o">=</span> <span class="n">reply</span><span class="o">.</span><span class="n">items</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">reply</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">MinosSagaExecutorException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">exception</span><span class="p">)</span>
 
