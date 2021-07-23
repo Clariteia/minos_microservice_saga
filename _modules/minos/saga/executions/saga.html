@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.7 documentation</title>
+  <title>minos.saga.executions.saga &mdash; Minos Microservice Saga 0.0.8 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -188,6 +188,9 @@
     <span class="n">CommandReply</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SagaContext</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..definitions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Saga</span><span class="p">,</span>
     <span class="n">SagaStep</span><span class="p">,</span>
@@ -201,9 +204,6 @@
     <span class="n">MinosSagaNotCommittedException</span><span class="p">,</span>
     <span class="n">MinosSagaPausedExecutionStepException</span><span class="p">,</span>
     <span class="n">MinosSagaRollbackExecutionException</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.context</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.executors</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LocalExecutor</span><span class="p">,</span>
@@ -300,10 +300,13 @@
 
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span> <span class="n">uuid4</span><span class="p">(),</span> <span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SagaExecution.execute"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+<div class="viewcode-block" id="SagaExecution.execute"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">reply_topic</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execute the ``Saga`` definition.</span>
 
 <span class="sd">        :param reply: An optional ``CommandReply`` to be consumed by the immediately next executed step.</span>
+<span class="sd">        :param reply_topic: The topic in which to receive the future replies.</span>
 <span class="sd">        :param args: Additional positional arguments.</span>
 <span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: A ``SagaContext instance.</span>
@@ -322,26 +325,25 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStatus</span><span class="o">.</span><span class="n">Running</span>
-
+        <span class="k">if</span> <span class="n">reply_topic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">reply_topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">paused_step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_one</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paused_step</span><span class="p">,</span> <span class="n">reply</span><span class="o">=</span><span class="n">reply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_one</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paused_step</span><span class="p">,</span> <span class="n">reply</span><span class="o">=</span><span class="n">reply</span><span class="p">,</span> <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">finally</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">paused_step</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pending_steps</span><span class="p">:</span>
             <span class="n">execution_step</span> <span class="o">=</span> <span class="n">SagaExecutionStep</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
-            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_one</span><span class="p">(</span><span class="n">execution_step</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_one</span><span class="p">(</span><span class="n">execution_step</span><span class="p">,</span> <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_commit_callback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_commit</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStatus</span><span class="o">.</span><span class="n">Finished</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span></div>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">execution_step</span><span class="p">:</span> <span class="n">SagaExecutionStep</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">execution_step</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span> <span class="n">definition_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">execution_step</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_executed</span><span class="p">(</span><span class="n">execution_step</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">MinosSagaFailedExecutionStepException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -352,18 +354,23 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStatus</span><span class="o">.</span><span class="n">Paused</span>
             <span class="k">raise</span> <span class="n">exc</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_commit_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_commit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">LocalExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">executor</span> <span class="o">=</span> <span class="n">LocalExecutor</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">commit_callback</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
+            <span class="n">new_context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec_operation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">commit_operation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">MinosSagaExecutorException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStatus</span><span class="o">.</span><span class="n">Errored</span>
             <span class="k">raise</span> <span class="n">MinosSagaFailedCommitCallbackException</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">exception</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SagaExecution.rollback"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.rollback">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">new_context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">new_context</span>
+
+<div class="viewcode-block" id="SagaExecution.rollback"><a class="viewcode-back" href="../../../../api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.rollback">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply_topic</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Revert the invoke participant operation with a with compensation operation.</span>
 
+<span class="sd">        :param reply_topic: The topic in which to receive the future replies.</span>
 <span class="sd">        :param args: Additional positional arguments.</span>
 <span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: The updated execution context.</span>
@@ -372,11 +379,14 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">MinosSagaRollbackExecutionException</span><span class="p">(</span><span class="s2">&quot;The saga was already rollbacked.&quot;</span><span class="p">)</span>
 
+        <span class="k">if</span> <span class="n">reply_topic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">reply_topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span>
+
         <span class="n">raised_exception</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">for</span> <span class="n">execution_step</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">executed_steps</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">execution_step</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span> <span class="n">definition_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span> <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
                 <span class="p">)</span>
             <span class="k">except</span> <span class="n">MinosSagaExecutionStepException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There was an exception on </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">execution_step</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> rollback: </span><span class="si">{</span><span class="n">exc</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>

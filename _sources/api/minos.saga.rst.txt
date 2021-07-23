@@ -21,5 +21,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   minos.saga.context
    minos.saga.exceptions
    minos.saga.manager

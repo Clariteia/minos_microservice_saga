@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.publish &mdash; Minos Microservice Saga 0.0.7 documentation</title>
+  <title>minos.saga.executions.executors.publish &mdash; Minos Microservice Saga 0.0.8 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -186,19 +186,20 @@
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MinosBroker</span><span class="p">,</span>
+    <span class="n">MinosBrokerNotProvidedException</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SagaContext</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...definitions</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaStepOperation</span><span class="p">,</span>
+    <span class="n">SagaOperation</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MinosSagaExecutorException</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.local</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LocalExecutor</span><span class="p">,</span>
@@ -213,15 +214,21 @@
 
     <span class="n">broker</span><span class="p">:</span> <span class="n">MinosBroker</span> <span class="o">=</span> <span class="n">Provide</span><span class="p">[</span><span class="s2">&quot;command_broker&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="PublishExecutor.__init__"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">definition_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="p">:</span> <span class="n">UUID</span><span class="p">,</span> <span class="n">broker</span><span class="p">:</span> <span class="n">MinosBroker</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="PublishExecutor.__init__"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="p">:</span> <span class="n">UUID</span><span class="p">,</span> <span class="n">reply_topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">broker</span><span class="p">:</span> <span class="n">MinosBroker</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span> <span class="o">=</span> <span class="n">execution_uuid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reply_topic</span> <span class="o">=</span> <span class="n">reply_topic</span>
+
         <span class="k">if</span> <span class="n">broker</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">broker</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span> <span class="o">=</span> <span class="n">definition_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span> <span class="o">=</span> <span class="n">execution_uuid</span></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">broker</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="p">,</span> <span class="n">Provide</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">MinosBrokerNotProvidedException</span><span class="p">(</span><span class="s2">&quot;A broker instance is required.&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PublishExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+<div class="viewcode-block" id="PublishExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.publish.html#minos.saga.executions.executors.publish.PublishExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Exec method, that perform the publishing logic run an pre-callback function to generate the command contents.</span>
 
 <span class="sd">        :param operation: Operation to be executed.</span>
@@ -238,11 +245,12 @@
             <span class="k">raise</span> <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">exception</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">context</span></div>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaOperation</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">send</span>
         <span class="n">topic</span> <span class="o">=</span> <span class="n">operation</span><span class="o">.</span><span class="n">name</span>
         <span class="n">saga</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span>
-        <span class="n">reply_topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition_name</span>
-        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">send</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">topic</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">saga</span><span class="o">=</span><span class="n">saga</span><span class="p">,</span> <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">)</span></div>
+        <span class="n">reply_topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reply_topic</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_function</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">topic</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">saga</span><span class="o">=</span><span class="n">saga</span><span class="p">,</span> <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

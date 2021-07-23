@@ -20,7 +20,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   minos.saga.executions.context
    minos.saga.executions.saga
    minos.saga.executions.status
    minos.saga.executions.step

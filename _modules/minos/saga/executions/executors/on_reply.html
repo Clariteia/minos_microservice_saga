@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.7 documentation</title>
+  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.8 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -177,17 +177,17 @@
     <span class="n">CommandStatus</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SagaContext</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...definitions</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaStepOperation</span><span class="p">,</span>
+    <span class="n">SagaOperation</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MinosCommandReplyFailedException</span><span class="p">,</span>
     <span class="n">MinosSagaExecutorException</span><span class="p">,</span>
     <span class="n">MinosSagaFailedExecutionStepException</span><span class="p">,</span>
     <span class="n">MinosSagaPausedExecutionStepException</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.local</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LocalExecutor</span><span class="p">,</span>
@@ -199,7 +199,7 @@
 
     <span class="c1"># noinspection PyUnusedLocal</span>
 <div class="viewcode-block" id="OnReplyExecutor.exec"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.executors.on_reply.html#minos.saga.executions.executors.on_reply.OnReplyExecutor.exec">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaStepOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">SagaOperation</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execute the on reply operation.</span>
 

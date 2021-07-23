@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.step module &mdash; Minos Microservice Saga 0.0.7 documentation</title>
+  <title>minos.saga.executions.step module &mdash; Minos Microservice Saga 0.0.8 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -202,12 +202,12 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>context</strong> (<a class="reference internal" href="minos.saga.executions.context.html#minos.saga.executions.context.SagaContext" title="minos.saga.executions.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.context.SagaContext</span></code></a>) – The execution context to be used during the execution.</p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>) – The execution context to be used during the execution.</p></li>
 <li><p><strong>reply</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.declarative.networks.CommandReply</span></code>]) – An optional command reply instance (to be consumed by the on_reply method).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="minos.saga.executions.context.html#minos.saga.executions.context.SagaContext" title="minos.saga.executions.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.context.SagaContext</span></code></a></p>
+<dd class="field-even"><p><a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The updated context.</p>
@@ -255,10 +255,10 @@
 <dd><p>Revert the invoke participant operation with a with compensation operation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>context</strong> (<a class="reference internal" href="minos.saga.executions.context.html#minos.saga.executions.context.SagaContext" title="minos.saga.executions.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.context.SagaContext</span></code></a>) – Execution context.</p>
+<dd class="field-odd"><p><strong>context</strong> (<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>) – Execution context.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="minos.saga.executions.context.html#minos.saga.executions.context.SagaContext" title="minos.saga.executions.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.context.SagaContext</span></code></a></p>
+<dd class="field-even"><p><a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The updated execution context.</p>

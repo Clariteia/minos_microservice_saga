@@ -12,5 +12,7 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   minos.saga.definitions.operations
    minos.saga.definitions.saga
    minos.saga.definitions.step
+   minos.saga.definitions.types
