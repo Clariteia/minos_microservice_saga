@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Minos Microservice Saga 0.0.9 documentation</title>
+  <title>Index &mdash; Minos Microservice Saga 0.0.10 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.9
+                0.0.10
               </div>
             
           
@@ -171,6 +171,7 @@
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#K"><strong>K</strong></a>
@@ -264,6 +265,10 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.already_destroyed">already_destroyed (minos.saga.manager.SagaManager property)</a>
+</li>
+      <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.already_setup">already_setup (minos.saga.manager.SagaManager property)</a>
+</li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MinosAlreadyOnSagaException.args">args (minos.saga.exceptions.MinosAlreadyOnSagaException attribute)</a>
 
       <ul>
@@ -464,6 +469,16 @@
       </ul></li>
       <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.from_saga">from_saga() (minos.saga.executions.saga.SagaExecution class method)</a>
 </li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.from_typed_dict">from_typed_dict() (minos.saga.context.SagaContext class method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.get">get() (minos.saga.context.SagaContext method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -483,6 +498,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.invoke_participant">invoke_participant() (minos.saga.definitions.step.SagaStep method)</a>
+</li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.items">items() (minos.saga.context.SagaContext method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -636,6 +653,13 @@
         <li><a href="api/minos.saga.manager.html#module-minos.saga.manager">module</a>
 </li>
       </ul></li>
+      <li>
+    minos.saga.messages
+
+      <ul>
+        <li><a href="api/minos.saga.messages.html#module-minos.saga.messages">module</a>
+</li>
+      </ul></li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MinosAlreadyOnSagaException">MinosAlreadyOnSagaException</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MinosCommandReplyFailedException">MinosCommandReplyFailedException</a>
@@ -725,6 +749,8 @@
         <li><a href="api/minos.saga.executions.storage.html#module-minos.saga.executions.storage">minos.saga.executions.storage</a>
 </li>
         <li><a href="api/minos.saga.manager.html#module-minos.saga.manager">minos.saga.manager</a>
+</li>
+        <li><a href="api/minos.saga.messages.html#module-minos.saga.messages">minos.saga.messages</a>
 </li>
       </ul></li>
   </ul></td>
@@ -819,8 +845,12 @@
 </li>
       <li><a href="api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">SagaOperation (class in minos.saga.definitions.operations)</a>
 </li>
+      <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaRequest">SagaRequest() (in module minos.saga.messages)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse">SagaResponse() (in module minos.saga.messages)</a>
+</li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStatus">SagaStatus (class in minos.saga.executions.status)</a>
 </li>
       <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep">SagaStep (class in minos.saga.definitions.step)</a>
@@ -845,11 +875,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.to_avro_bytes">to_avro_bytes() (minos.saga.context.SagaContext class method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.to_avro_str">to_avro_str() (minos.saga.context.SagaContext class method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.type_hints">type_hints (minos.saga.context.SagaContext attribute)</a>
+</li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.type_hints_parameters">type_hints_parameters (minos.saga.context.SagaContext attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -858,6 +890,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.validate">validate() (minos.saga.definitions.step.SagaStep method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.values">values() (minos.saga.context.SagaContext method)</a>
 </li>
   </ul></td>
 </tr></table>

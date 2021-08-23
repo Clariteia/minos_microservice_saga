@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.9 documentation</title>
+  <title>minos.saga.executions.executors.on_reply &mdash; Minos Microservice Saga 0.0.10 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.9
+                0.0.10
               </div>
             
           
@@ -214,7 +214,7 @@
             <span class="k">raise</span> <span class="n">MinosSagaPausedExecutionStepException</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">reply</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">CommandStatus</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">MinosCommandReplyFailedException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CommandReply status is not success. Obtained: </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">MinosCommandReplyFailedException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CommandReply failed with </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2"> status: </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">data</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">context</span>

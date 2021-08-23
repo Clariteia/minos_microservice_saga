@@ -24,3 +24,4 @@ Submodules
    minos.saga.context
    minos.saga.exceptions
    minos.saga.manager
+   minos.saga.messages
