@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.saga &mdash; Minos Microservice Saga 0.0.10 documentation</title>
+  <title>minos.saga.definitions.saga &mdash; Minos Microservice Saga 0.0.11 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.10
+                0.0.11
               </div>
             
           
@@ -161,13 +161,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for minos.saga.definitions.saga</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Copyright (C) 2021 Clariteia SL</span>
-
-<span class="sd">This file is part of minos framework.</span>
-
-<span class="sd">Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;minos.saga.definitions.saga module.&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">annotations</span><span class="p">,</span>
@@ -199,19 +193,17 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="Saga"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga">[docs]</a><span class="k">class</span> <span class="nc">Saga</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Saga"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga">[docs]</a><span class="k">class</span> <span class="nc">Saga</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Saga class.</span>
 
 <span class="sd">    The purpose of this class is to define a sequence of operations among microservices.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Saga.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">SagaStep</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">commit_operation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaOperation</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">):</span>
+    <span class="c1"># noinspection PyUnusedLocal</span>
+<div class="viewcode-block" id="Saga.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">SagaStep</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">commit_operation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaOperation</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">steps</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">steps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="n">steps</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">commit_operation</span> <span class="o">=</span> <span class="n">commit_operation</span></div>
 
@@ -265,7 +257,6 @@
 <span class="sd">        :return: A ``dict`` instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ans</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">step</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">],</span>
             <span class="s2">&quot;commit&quot;</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit_operation</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit_operation</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span>
         <span class="p">}</span>
@@ -276,7 +267,6 @@
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">:</span>
         <span class="k">yield from</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">commit_operation</span><span class="p">,</span>
         <span class="p">)</span>
