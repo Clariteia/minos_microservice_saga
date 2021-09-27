@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.storage module &mdash; Minos Microservice Saga 0.0.11 documentation</title>
+  <title>minos.saga.executions.storage module &mdash; Minos Microservice Saga 0.0.12 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.11
+                0.0.12
               </div>
             
           
@@ -182,9 +182,6 @@
             
   <div class="section" id="module-minos.saga.executions.storage">
 <span id="minos-saga-executions-storage-module"></span><h1>minos.saga.executions.storage module<a class="headerlink" href="#module-minos.saga.executions.storage" title="Permalink to this headline">¶</a></h1>
-<p>Copyright (C) 2021 Clariteia SL</p>
-<p>This file is part of minos framework.</p>
-<p>Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.executions.storage.SagaExecutionStorage">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.executions.storage.</span></span><span class="sig-name descname"><span class="pre">SagaExecutionStorage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">storage_cls=&lt;class</span> <span class="pre">'minos.common.storage.lmdb.MinosStorageLmdb'&gt;</span></em>, <em class="sig-param"><span class="pre">protocol=&lt;class</span> <span class="pre">'minos.common.protocol.json.MinosJsonBinaryProtocol'&gt;</span></em>, <em class="sig-param"><span class="pre">db_name='LocalState'</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/storage.html#SagaExecutionStorage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.storage.SagaExecutionStorage" title="Permalink to this definition">¶</a></dt>
@@ -204,7 +201,7 @@
 <dd class="field-odd"><p><strong>key</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<a class="reference internal" href="minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution" title="minos.saga.executions.saga.SagaExecution"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.saga.SagaExecution</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>]) – Execution key to be deleted.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.NoReturn</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This method does not return anything.</p>
@@ -259,7 +256,7 @@
 <dd class="field-odd"><p><strong>execution</strong> (<a class="reference internal" href="minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution" title="minos.saga.executions.saga.SagaExecution"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.saga.SagaExecution</span></code></a>) – Execution to be stored.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.NoReturn</span></code></p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>This method does not return anything.</p>

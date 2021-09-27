@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.manager &mdash; Minos Microservice Saga 0.0.11 documentation</title>
+  <title>minos.saga.manager &mdash; Minos Microservice Saga 0.0.12 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.11
+                0.0.12
               </div>
             
           
@@ -161,9 +161,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for minos.saga.manager</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;minos.saga.manager module.&quot;&quot;&quot;</span>
-
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">annotations</span><span class="p">,</span>
 <span class="p">)</span>
 
@@ -178,6 +176,7 @@
 
 <span class="kn">from</span> <span class="nn">dependency_injector.wiring</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Provide</span><span class="p">,</span>
+    <span class="n">inject</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
@@ -214,23 +213,21 @@
 <span class="sd">    The purpose of this class is to manage the running process for new or paused``SagaExecution`` instances.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">dynamic_handler_pool</span><span class="p">:</span> <span class="n">MinosPool</span><span class="p">[</span><span class="n">MinosHandler</span><span class="p">]</span> <span class="o">=</span> <span class="n">Provide</span><span class="p">[</span><span class="s2">&quot;dynamic_handler_pool&quot;</span><span class="p">]</span>
-
-<div class="viewcode-block" id="SagaManager.__init__"><a class="viewcode-back" href="../../../api/minos.saga.manager.html#minos.saga.manager.SagaManager.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="SagaManager.__init__"><a class="viewcode-back" href="../../../api/minos.saga.manager.html#minos.saga.manager.SagaManager.__init__">[docs]</a>    <span class="nd">@inject</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">storage</span><span class="p">:</span> <span class="n">SagaExecutionStorage</span><span class="p">,</span>
-        <span class="n">dynamic_handler_pool</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MinosPool</span><span class="p">[</span><span class="n">MinosHandler</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dynamic_handler_pool</span><span class="p">:</span> <span class="n">MinosPool</span><span class="p">[</span><span class="n">MinosHandler</span><span class="p">]</span> <span class="o">=</span> <span class="n">Provide</span><span class="p">[</span><span class="s2">&quot;dynamic_handler_pool&quot;</span><span class="p">],</span>
         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span> <span class="n">storage</span>
 
-        <span class="k">if</span> <span class="n">dynamic_handler_pool</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_handler_pool</span> <span class="o">=</span> <span class="n">dynamic_handler_pool</span>
+        <span class="k">if</span> <span class="n">dynamic_handler_pool</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dynamic_handler_pool</span><span class="p">,</span> <span class="n">Provide</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">MinosHandlerNotProvidedException</span><span class="p">(</span><span class="s2">&quot;A handler pool instance is required.&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_handler_pool</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dynamic_handler_pool</span><span class="p">,</span> <span class="n">Provide</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="n">MinosHandlerNotProvidedException</span><span class="p">(</span><span class="s2">&quot;A handler pool instance is required.&quot;</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_handler_pool</span> <span class="o">=</span> <span class="n">dynamic_handler_pool</span></div>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MinosConfig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaManager</span><span class="p">:</span>
