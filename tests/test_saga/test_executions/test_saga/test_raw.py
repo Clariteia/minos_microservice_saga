@@ -3,13 +3,9 @@ from unittest.mock import (
     MagicMock,
     patch,
 )
-from uuid import (
-    UUID,
-)
+from uuid import UUID
 
-from minos.common import (
-    MinosConfig,
-)
+from minos.common import MinosConfig
 from minos.saga import (
     MinosSagaPausedExecutionStepException,
     SagaContext,

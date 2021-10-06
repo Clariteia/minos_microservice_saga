@@ -1,6 +1,4 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 from typing import (
     Any,
@@ -9,9 +7,7 @@ from typing import (
     Union,
 )
 
-from ..context import (
-    SagaContext,
-)
+from ..context import SagaContext
 from ..exceptions import (
     MinosAlreadyOnSagaException,
     MinosSagaAlreadyCommittedException,
@@ -20,12 +16,8 @@ from .operations import (
     SagaOperation,
     identity_fn,
 )
-from .step import (
-    SagaStep,
-)
-from .types import (
-    CommitCallback,
-)
+from .step import SagaStep
+from .types import CommitCallback
 
 
 class Saga:

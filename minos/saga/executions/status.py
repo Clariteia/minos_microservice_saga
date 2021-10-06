@@ -1,13 +1,7 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
-from enum import (
-    Enum,
-)
-from typing import (
-    Union,
-)
+from enum import Enum
+from typing import Union
 
 
 class SagaStatus(Enum):

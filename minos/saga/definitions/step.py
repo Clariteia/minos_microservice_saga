@@ -1,6 +1,4 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 from typing import (
     TYPE_CHECKING,
@@ -10,9 +8,7 @@ from typing import (
     Union,
 )
 
-from ..context import (
-    SagaContext,
-)
+from ..context import SagaContext
 from ..exceptions import (
     MinosMultipleOnExecuteException,
     MinosMultipleOnFailureException,
@@ -21,18 +17,14 @@ from ..exceptions import (
     MinosSagaNotDefinedException,
     MinosUndefinedOnExecuteException,
 )
-from .operations import (
-    SagaOperation,
-)
+from .operations import SagaOperation
 from .types import (
     RequestCallBack,
     ResponseCallBack,
 )
 
 if TYPE_CHECKING:
-    from .saga import (
-        Saga,
-    )
+    from .saga import Saga
 
 
 class SagaStep:
@@ -77,9 +69,7 @@ class SagaStep:
 
         return cls(**current)
 
-    def on_execute(
-        self, callback: RequestCallBack, parameters: Optional[SagaContext] = None, **kwargs
-    ) -> SagaStep:
+    def on_execute(self, callback: RequestCallBack, parameters: Optional[SagaContext] = None, **kwargs) -> SagaStep:
         """On execute method.
 
         :param callback: The callback function to be called.
@@ -95,9 +85,7 @@ class SagaStep:
 
         return self
 
-    def on_failure(
-        self, callback: RequestCallBack, parameters: Optional[SagaContext] = None, **kwargs
-    ) -> SagaStep:
+    def on_failure(self, callback: RequestCallBack, parameters: Optional[SagaContext] = None, **kwargs) -> SagaStep:
         """On failure method.
 
         :param callback: The callback function to be called.

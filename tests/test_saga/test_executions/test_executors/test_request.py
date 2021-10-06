@@ -3,13 +3,9 @@ from unittest.mock import (
     MagicMock,
     call,
 )
-from uuid import (
-    uuid4,
-)
+from uuid import uuid4
 
-from minos.common import (
-    MinosBrokerNotProvidedException,
-)
+from minos.common import MinosBrokerNotProvidedException
 from minos.saga import (
     LocalExecutor,
     MinosSagaFailedExecutionStepException,

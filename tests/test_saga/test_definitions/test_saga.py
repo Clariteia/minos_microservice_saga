@@ -1,7 +1,5 @@
 import unittest
-from shutil import (
-    rmtree,
-)
+from shutil import rmtree
 
 from minos.saga import (
     MinosAlreadyOnSagaException,

@@ -1,30 +1,20 @@
-from typing import (
-    Optional,
-)
+from typing import Optional
 
 from minos.common import (
     CommandReply,
     CommandStatus,
 )
 
-from ...context import (
-    SagaContext,
-)
-from ...definitions import (
-    SagaOperation,
-)
+from ...context import SagaContext
+from ...definitions import SagaOperation
 from ...exceptions import (
     MinosCommandReplyFailedException,
     MinosSagaExecutorException,
     MinosSagaFailedExecutionStepException,
     MinosSagaPausedExecutionStepException,
 )
-from ...messages import (
-    SagaResponse,
-)
-from .local import (
-    LocalExecutor,
-)
+from ...messages import SagaResponse
+from .local import LocalExecutor
 
 
 class ResponseExecutor(LocalExecutor):

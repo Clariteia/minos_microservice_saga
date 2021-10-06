@@ -1,7 +1,5 @@
 __version__ = "0.0.12"
-from .context import (
-    SagaContext,
-)
+from .context import SagaContext
 from .definitions import (
     Saga,
     SagaOperation,
@@ -42,9 +40,7 @@ from .executions import (
     SagaStepExecution,
     SagaStepStatus,
 )
-from .manager import (
-    SagaManager,
-)
+from .manager import SagaManager
 from .messages import (
     SagaRequest,
     SagaResponse,

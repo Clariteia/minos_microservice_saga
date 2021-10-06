@@ -1,14 +1,10 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 from typing import (
     Type,
     Union,
 )
-from uuid import (
-    UUID,
-)
+from uuid import UUID
 
 from minos.common import (
     MinosConfig,
@@ -17,12 +13,8 @@ from minos.common import (
     MinosStorageLmdb,
 )
 
-from ..exceptions import (
-    MinosSagaExecutionNotFoundException,
-)
-from .saga import (
-    SagaExecution,
-)
+from ..exceptions import MinosSagaExecutionNotFoundException
+from .saga import SagaExecution
 
 
 class SagaExecutionStorage:

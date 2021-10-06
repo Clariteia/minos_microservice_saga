@@ -1,8 +1,6 @@
 import unittest
 import uuid
-from unittest.mock import (
-    MagicMock,
-)
+from unittest.mock import MagicMock
 
 from minos.common import (
     CommandStatus,

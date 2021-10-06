@@ -1,15 +1,11 @@
-from collections.abc import (
-    Callable,
-)
+from collections.abc import Callable
 from typing import (
     Awaitable,
     Optional,
     Union,
 )
 
-from ..context import (
-    SagaContext,
-)
+from ..context import SagaContext
 from ..messages import (
     SagaRequest,
     SagaResponse,

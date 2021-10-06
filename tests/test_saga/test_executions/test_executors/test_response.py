@@ -1,11 +1,7 @@
 import unittest
-from pathlib import (
-    Path,
-)
+from pathlib import Path
 
-from minos.common import (
-    CommandStatus,
-)
+from minos.common import CommandStatus
 from minos.saga import (
     LocalExecutor,
     MinosCommandReplyFailedException,

@@ -1,6 +1,4 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 import logging
 from typing import (
@@ -9,17 +7,11 @@ from typing import (
     Optional,
     Union,
 )
-from uuid import (
-    UUID,
-)
+from uuid import UUID
 
-from minos.common import (
-    CommandReply,
-)
+from minos.common import CommandReply
 
-from ..context import (
-    SagaContext,
-)
+from ..context import SagaContext
 from ..definitions import (
     Saga,
     SagaStep,
@@ -34,15 +26,9 @@ from ..exceptions import (
     MinosSagaRollbackExecutionException,
     MinosSagaStepExecutionException,
 )
-from .executors import (
-    LocalExecutor,
-)
-from .status import (
-    SagaStatus,
-)
-from .step import (
-    SagaStepExecution,
-)
+from .executors import LocalExecutor
+from .status import SagaStatus
+from .step import SagaStepExecution
 
 logger = logging.getLogger(__name__)
 
@@ -120,9 +106,7 @@ class SagaExecution:
         :param kwargs: Additional named arguments.
         :return: A new ``SagaExecution`` instance.
         """
-        from uuid import (
-            uuid4,
-        )
+        from uuid import uuid4
 
         if context is None:
             context = SagaContext()

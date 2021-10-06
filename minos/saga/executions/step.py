@@ -1,6 +1,4 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 from typing import (
     Any,
@@ -9,16 +7,10 @@ from typing import (
     Union,
 )
 
-from minos.common import (
-    CommandReply,
-)
+from minos.common import CommandReply
 
-from ..context import (
-    SagaContext,
-)
-from ..definitions import (
-    SagaStep,
-)
+from ..context import SagaContext
+from ..definitions import SagaStep
 from ..exceptions import (
     MinosCommandReplyFailedException,
     MinosSagaFailedExecutionStepException,
@@ -29,9 +21,7 @@ from .executors import (
     RequestExecutor,
     ResponseExecutor,
 )
-from .status import (
-    SagaStepStatus,
-)
+from .status import SagaStepStatus
 
 
 class SagaStepExecution:
