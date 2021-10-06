@@ -1,7 +1,13 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
-from typing import Optional
-from uuid import UUID
+from typing import (
+    Optional,
+)
+from uuid import (
+    UUID,
+)
 
 from dependency_injector.wiring import (
     Provide,
@@ -13,14 +19,22 @@ from minos.common import (
     MinosBrokerNotProvidedException,
 )
 
-from ...context import SagaContext
-from ...definitions import SagaOperation
+from ...context import (
+    SagaContext,
+)
+from ...definitions import (
+    SagaOperation,
+)
 from ...exceptions import (
     MinosSagaExecutorException,
     MinosSagaFailedExecutionStepException,
 )
-from ...messages import SagaRequest
-from .local import LocalExecutor
+from ...messages import (
+    SagaRequest,
+)
+from .local import (
+    LocalExecutor,
+)
 
 
 class RequestExecutor(LocalExecutor):

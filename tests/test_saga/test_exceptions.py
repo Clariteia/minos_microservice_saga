@@ -1,6 +1,8 @@
 import unittest
 
-from minos.common import MinosException
+from minos.common import (
+    MinosException,
+)
 from minos.saga import (
     MinosAlreadyOnSagaException,
     MinosMultipleOnExecuteException,

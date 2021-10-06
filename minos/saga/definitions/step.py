@@ -1,4 +1,6 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 from typing import (
     TYPE_CHECKING,
@@ -8,7 +10,9 @@ from typing import (
     Union,
 )
 
-from ..context import SagaContext
+from ..context import (
+    SagaContext,
+)
 from ..exceptions import (
     MinosMultipleOnExecuteException,
     MinosMultipleOnFailureException,
@@ -17,14 +21,18 @@ from ..exceptions import (
     MinosSagaNotDefinedException,
     MinosUndefinedOnExecuteException,
 )
-from .operations import SagaOperation
+from .operations import (
+    SagaOperation,
+)
 from .types import (
     RequestCallBack,
     ResponseCallBack,
 )
 
 if TYPE_CHECKING:
-    from .saga import Saga
+    from .saga import (
+        Saga,
+    )
 
 
 class SagaStep:

@@ -1,7 +1,11 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 import typing as t
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 from typing import (
     Any,
     Optional,
@@ -11,7 +15,9 @@ from uuid import (
     uuid4,
 )
 
-from aiomisc.pool import T
+from aiomisc.pool import (
+    T,
+)
 
 from minos.common import (
     CommandReply,

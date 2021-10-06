@@ -1,4 +1,6 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 from typing import (
     Any,
@@ -14,7 +16,9 @@ from minos.common import (
     import_module,
 )
 
-from ..context import SagaContext
+from ..context import (
+    SagaContext,
+)
 
 T = TypeVar("T")
 

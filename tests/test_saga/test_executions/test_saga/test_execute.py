@@ -1,7 +1,11 @@
 import unittest
-from unittest.mock import MagicMock
+from unittest.mock import (
+    MagicMock,
+)
 
-from minos.common import MinosConfig
+from minos.common import (
+    MinosConfig,
+)
 from minos.saga import (
     MinosSagaExecutionAlreadyExecutedException,
     MinosSagaFailedCommitCallbackException,
