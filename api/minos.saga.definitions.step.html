@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.step module &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.definitions.step module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -184,12 +184,12 @@
 <span id="minos-saga-definitions-step-module"></span><h1>minos.saga.definitions.step module<a class="headerlink" href="#module-minos.saga.definitions.step" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.definitions.step.</span></span><span class="sig-name descname"><span class="pre">SagaStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invoke_participant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_compensation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_reply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.definitions.step.</span></span><span class="sig-name descname"><span class="pre">SagaStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_execute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_success</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_failure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Saga step class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invoke_participant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_compensation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_reply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_execute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_success</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_failure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -232,30 +232,17 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.has_reply">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_reply</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.has_reply" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the step contains a reply operation or not.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">bool</span></code> instance.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.invoke_participant">
-<span class="sig-name descname"><span class="pre">invoke_participant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.invoke_participant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.invoke_participant" title="Permalink to this definition">¶</a></dt>
-<dd><p>Invoke a new participant method.</p>
+<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.on_error">
+<span class="sig-name descname"><span class="pre">on_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.on_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.on_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>On error method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>]) – The name of the new participant instruction.</p></li>
-<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]]]) – The callback function used for the request contents preparation.</p></li>
+<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaResponse" title="minos.saga.messages.SagaResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaResponse</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]]]]) – The callback function to be called.</p></li>
 <li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]) – A mapping of named parameters to be passed to the callback.</p></li>
+<li><p><strong>kwargs</strong> – A set of named arguments to be passed to the callback. <code class="docutils literal notranslate"><span class="pre">parameters</span></code> has priority if it is not
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -268,15 +255,60 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.on_reply">
-<span class="sig-name descname"><span class="pre">on_reply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback=&lt;function</span> <span class="pre">identity_fn&gt;</span></em>, <em class="sig-param"><span class="pre">parameters=None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.on_reply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.on_reply" title="Permalink to this definition">¶</a></dt>
-<dd><p>On reply method.</p>
+<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.on_execute">
+<span class="sig-name descname"><span class="pre">on_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.on_execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.on_execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>On execute method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The name of the variable in which the reply will be stored on the context.</p></li>
-<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]]]) – The callback function used to handle the invoke participant response.</p></li>
+<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaRequest" title="minos.saga.messages.SagaRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaRequest</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaRequest" title="minos.saga.messages.SagaRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaRequest</span></code></a>]]]) – The callback function to be called.</p></li>
 <li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]) – A mapping of named parameters to be passed to the callback.</p></li>
+<li><p><strong>kwargs</strong> – A set of named arguments to be passed to the callback. <code class="docutils literal notranslate"><span class="pre">parameters</span></code> has priority if it is not
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#minos.saga.definitions.step.SagaStep" title="minos.saga.definitions.step.SagaStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.step.SagaStep</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">self</span></code> reference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.on_failure">
+<span class="sig-name descname"><span class="pre">on_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.on_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.on_failure" title="Permalink to this definition">¶</a></dt>
+<dd><p>On failure method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaRequest" title="minos.saga.messages.SagaRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaRequest</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaRequest" title="minos.saga.messages.SagaRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaRequest</span></code></a>]]]) – The callback function to be called.</p></li>
+<li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]) – A mapping of named parameters to be passed to the callback.</p></li>
+<li><p><strong>kwargs</strong> – A set of named arguments to be passed to the callback. <code class="docutils literal notranslate"><span class="pre">parameters</span></code> has priority if it is not
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#minos.saga.definitions.step.SagaStep" title="minos.saga.definitions.step.SagaStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.step.SagaStep</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">self</span></code> reference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.on_success">
+<span class="sig-name descname"><span class="pre">on_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.on_success"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.on_success" title="Permalink to this definition">¶</a></dt>
+<dd><p>On success method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaResponse" title="minos.saga.messages.SagaResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaResponse</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]]]]) – The callback function to be called.</p></li>
+<li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]) – A mapping of named parameters to be passed to the callback.</p></li>
+<li><p><strong>kwargs</strong> – A set of named arguments to be passed to the callback. <code class="docutils literal notranslate"><span class="pre">parameters</span></code> has priority if it is not
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -304,14 +336,20 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new step in the <code class="docutils literal notranslate"><span class="pre">Saga</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#minos.saga.definitions.step.SagaStep" title="minos.saga.definitions.step.SagaStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.step.SagaStep</span></code></a></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Additional positional parameters.</p></li>
+<li><p><strong>kwargs</strong> – Additional named parameters.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A new <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> instance.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#minos.saga.definitions.step.SagaStep" title="minos.saga.definitions.step.SagaStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.step.SagaStep</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A new <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -324,27 +362,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.definitions.step.SagaStep.with_compensation">
-<span class="sig-name descname"><span class="pre">with_compensation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/step.html#SagaStep.with_compensation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.step.SagaStep.with_compensation" title="Permalink to this definition">¶</a></dt>
-<dd><p>With compensation method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The name of the with compensation instruction.</p></li>
-<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>]]]) – The callback function used for the request contents preparation.</p></li>
-<li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]) – A mapping of named parameters to be passed to the callback.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#minos.saga.definitions.step.SagaStep" title="minos.saga.definitions.step.SagaStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.step.SagaStep</span></code></a></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">self</span></code> reference.</p>
 </dd>
 </dl>
 </dd></dl>

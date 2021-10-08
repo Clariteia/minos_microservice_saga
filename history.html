@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>History &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>History &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id10">0.0.10 (2021-08-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id11">0.0.11 (2021-09-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id12">0.0.12 (2021-09-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.1.0 (2021-10-08)</a></li>
 </ul>
 </li>
 </ul>
@@ -267,6 +268,18 @@
 <li><p>Fix troubles related with dependency injections.</p></li>
 <li><p>Remove file headers.</p></li>
 <li><p>Stop using <code class="docutils literal notranslate"><span class="pre">NoReturn</span></code> everywhere.</p></li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>0.1.0 (2021-10-08)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SagaStep.on_error</span></code> method to handle errored responses.</p></li>
+<li><p>Integrate <code class="docutils literal notranslate"><span class="pre">SagaRequest</span></code> and <code class="docutils literal notranslate"><span class="pre">SagaResponse</span></code> into <code class="docutils literal notranslate"><span class="pre">SagaOperation</span></code> definitions.</p></li>
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> methods (<code class="docutils literal notranslate"><span class="pre">invoke_participant</span></code> as <code class="docutils literal notranslate"><span class="pre">on_execute</span></code>, <code class="docutils literal notranslate"><span class="pre">on_reply</span></code> as <code class="docutils literal notranslate"><span class="pre">on_success</span></code>, <code class="docutils literal notranslate"><span class="pre">with_compensation</span></code> as <code class="docutils literal notranslate"><span class="pre">on_failure</span></code>).</p></li>
+<li><p>Enrich <code class="docutils literal notranslate"><span class="pre">SagaRequest</span></code> and <code class="docutils literal notranslate"><span class="pre">SagaResponse</span></code> to be classes instead of simple constructor helpers.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">CommitExecutor</span></code>.</p></li>
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">LocalExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">Executor</span></code>, <code class="docutils literal notranslate"><span class="pre">OnReplyExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">ResponseExecutor</span></code> and <code class="docutils literal notranslate"><span class="pre">PublishExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">RequestExecutor</span></code>.</p></li>
+<li><p>Simplify <code class="docutils literal notranslate"><span class="pre">SagaException</span></code> and heirs names.</p></li>
 </ul>
 </div>
 </div>

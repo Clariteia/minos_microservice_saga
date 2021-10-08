@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.status module &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.executions.status module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -256,18 +256,28 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredInvokeParticipant">
-<span class="sig-name descname"><span class="pre">ErroredInvokeParticipant</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredInvokeParticipant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredByOnExecute">
+<span class="sig-name descname"><span class="pre">ErroredByOnExecute</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-by-on-execute'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredByOnExecute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredOnReply">
-<span class="sig-name descname"><span class="pre">ErroredOnReply</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-on-reply'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredOnReply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredOnError">
+<span class="sig-name descname"><span class="pre">ErroredOnError</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-on-error'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredOnError" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredWithCompensation">
-<span class="sig-name descname"><span class="pre">ErroredWithCompensation</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-with-compensation'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredWithCompensation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredOnExecute">
+<span class="sig-name descname"><span class="pre">ErroredOnExecute</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-on-execute'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredOnExecute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredOnFailure">
+<span class="sig-name descname"><span class="pre">ErroredOnFailure</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-on-failure'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredOnFailure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.ErroredOnSuccess">
+<span class="sig-name descname"><span class="pre">ErroredOnSuccess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'errored-on-success'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.ErroredOnSuccess" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -276,33 +286,38 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.FinishedInvokeParticipant">
-<span class="sig-name descname"><span class="pre">FinishedInvokeParticipant</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'finished-invoke-participant'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.FinishedInvokeParticipant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.FinishedOnExecute">
+<span class="sig-name descname"><span class="pre">FinishedOnExecute</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'finished-on-execute'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.FinishedOnExecute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.PausedOnReply">
-<span class="sig-name descname"><span class="pre">PausedOnReply</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'paused-on-reply'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.PausedOnReply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.PausedByOnExecute">
+<span class="sig-name descname"><span class="pre">PausedByOnExecute</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'paused-by-on-execute'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.PausedByOnExecute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.PausedWithCompensation">
-<span class="sig-name descname"><span class="pre">PausedWithCompensation</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'paused-with-compensation'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.PausedWithCompensation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.PausedOnFailure">
+<span class="sig-name descname"><span class="pre">PausedOnFailure</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'paused-on-failure'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.PausedOnFailure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningInvokeParticipant">
-<span class="sig-name descname"><span class="pre">RunningInvokeParticipant</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-invoke-participant'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningInvokeParticipant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningOnError">
+<span class="sig-name descname"><span class="pre">RunningOnError</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-on-error'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningOnError" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningOnReply">
-<span class="sig-name descname"><span class="pre">RunningOnReply</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-on-reply'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningOnReply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningOnExecute">
+<span class="sig-name descname"><span class="pre">RunningOnExecute</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-on-execute'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningOnExecute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningWithCompensation">
-<span class="sig-name descname"><span class="pre">RunningWithCompensation</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-with-compensation'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningWithCompensation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningOnFailure">
+<span class="sig-name descname"><span class="pre">RunningOnFailure</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-on-failure'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningOnFailure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.executions.status.SagaStepStatus.RunningOnSuccess">
+<span class="sig-name descname"><span class="pre">RunningOnSuccess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'running-on-success'</span></em><a class="headerlink" href="#minos.saga.executions.status.SagaStepStatus.RunningOnSuccess" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

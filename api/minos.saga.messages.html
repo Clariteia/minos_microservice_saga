@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.messages module &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.messages module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -180,44 +180,143 @@
             
   <div class="section" id="module-minos.saga.messages">
 <span id="minos-saga-messages-module"></span><h1>minos.saga.messages module<a class="headerlink" href="#module-minos.saga.messages" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
+<dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.messages.SagaRequest">
-<span class="sig-prename descclassname"><span class="pre">minos.saga.messages.</span></span><span class="sig-name descname"><span class="pre">SagaRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaRequest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaRequest" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build a <cite>SagaRequest</cite> model type.</p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.messages.</span></span><span class="sig-name descname"><span class="pre">SagaRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaRequest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Saga Request class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaRequest.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaRequest.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaRequest.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaRequest.content">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaRequest.content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaRequest.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the content of the request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>args</strong> – Additional positional parameters.</p></li>
-<li><p><strong>kwargs</strong> – Additional named parameters.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>kwargs</strong> – Additional named parameters.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.types.model_types.ModelType</span></code></p>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">ModelType</span></code> instance.</p>
+<dd class="field-odd"><p>The content of the request.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse">
-<span class="sig-prename descclassname"><span class="pre">minos.saga.messages.</span></span><span class="sig-name descname"><span class="pre">SagaResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build a <cite>SagaResponse</cite> model type.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaRequest.target">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">target</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#minos.saga.messages.SagaRequest.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the target of the request.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>args</strong> – Additional positional parameters.</p></li>
-<li><p><strong>kwargs</strong> – Additional named parameters.</p></li>
-</ul>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.types.model_types.ModelType</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">ModelType</span></code> instance.</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">str</span></code> instance.</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.messages.</span></span><span class="sig-name descname"><span class="pre">SagaResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Saga Response class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponse.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponse.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse.content">
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponse.content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponse.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the response content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Additional named parameters.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The content of the response.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse.ok">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ok</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#minos.saga.messages.SagaResponse.ok" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the response is okay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the response is okay</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponse.status">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="pre">:</span> <span class="pre">minos.saga.messages.SagaResponseStatus</span></em><a class="headerlink" href="#minos.saga.messages.SagaResponse.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status code of the response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#minos.saga.messages.SagaResponseStatus" title="minos.saga.messages.SagaResponseStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaResponseStatus</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">ResponseStatus</span></code> instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponseStatus">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.messages.</span></span><span class="sig-name descname"><span class="pre">SagaResponseStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponseStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponseStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntEnum</span></code></p>
+<p>Saga Response Status class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponseStatus.ERROR">
+<span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">400</span></em><a class="headerlink" href="#minos.saga.messages.SagaResponseStatus.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponseStatus.SUCCESS">
+<span class="sig-name descname"><span class="pre">SUCCESS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">200</span></em><a class="headerlink" href="#minos.saga.messages.SagaResponseStatus.SUCCESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponseStatus.SYSTEM_ERROR">
+<span class="sig-name descname"><span class="pre">SYSTEM_ERROR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">500</span></em><a class="headerlink" href="#minos.saga.messages.SagaResponseStatus.SYSTEM_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.messages.SagaResponseStatus.from_raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/messages.html#SagaResponseStatus.from_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.messages.SagaResponseStatus.from_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a new instance from raw.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The raw representation of the instance.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#minos.saga.messages.SagaResponseStatus" title="minos.saga.messages.SagaResponseStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaResponseStatus</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">SagaResponseStatus</span></code> instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

@@ -1,7 +1,0 @@
-minos.saga.executions.executors.publish module
-==============================================
-
-.. automodule:: minos.saga.executions.executors.publish
-   :members:
-   :undoc-members:
-   :show-inheritance:

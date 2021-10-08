@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.exceptions &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.exceptions &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -166,147 +166,156 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="MinosSagaException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaException</span><span class="p">(</span><span class="n">MinosException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaException">[docs]</a><span class="k">class</span> <span class="nc">SagaException</span><span class="p">(</span><span class="n">MinosException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base saga exception.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaStepException</span><span class="p">(</span><span class="n">MinosSagaException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepException">[docs]</a><span class="k">class</span> <span class="nc">SagaStepException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base exception for saga steps.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaNotDefinedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaNotDefinedException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaNotDefinedException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaNotDefinedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaNotDefinedException">[docs]</a><span class="k">class</span> <span class="nc">SagaNotDefinedException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when the saga is not defined.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosSagaNotDefinedException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaNotDefinedException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaNotDefinedException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaNotDefinedException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; must have a &#39;Saga&#39; instance to call call this method.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosSagaEmptyStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaEmptyStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaEmptyStepException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
+<div class="viewcode-block" id="EmptySagaStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException">[docs]</a><span class="k">class</span> <span class="nc">EmptySagaStepException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when the step is empty.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosSagaEmptyStepException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaEmptyStepException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="EmptySagaStepException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; must have at least one defined action.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosMultipleInvokeParticipantException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleInvokeParticipantException">[docs]</a><span class="k">class</span> <span class="nc">MinosMultipleInvokeParticipantException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple invoke participant methods are defined.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="MultipleOnExecuteException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnExecuteException">[docs]</a><span class="k">class</span> <span class="nc">MultipleOnExecuteException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple on execute methods are defined.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosMultipleInvokeParticipantException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleInvokeParticipantException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultipleOnExecuteException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnExecuteException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;invoke_participant&#39; method.&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;on_execute&#39; method.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosMultipleWithCompensationException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleWithCompensationException">[docs]</a><span class="k">class</span> <span class="nc">MinosMultipleWithCompensationException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple with compensation methods are defined.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="MultipleOnFailureException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnFailureException">[docs]</a><span class="k">class</span> <span class="nc">MultipleOnFailureException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple on failure methods are defined.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosMultipleWithCompensationException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleWithCompensationException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultipleOnFailureException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnFailureException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;with_compensation&#39; method.&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;on_failure&#39; method.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosMultipleOnReplyException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleOnReplyException">[docs]</a><span class="k">class</span> <span class="nc">MinosMultipleOnReplyException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple on reply methods are defined.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="MultipleOnSuccessException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnSuccessException">[docs]</a><span class="k">class</span> <span class="nc">MultipleOnSuccessException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple on success methods are defined.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosMultipleOnReplyException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosMultipleOnReplyException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultipleOnSuccessException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnSuccessException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;on_reply&#39; method.&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;on_success&#39; method.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosAlreadyOnSagaException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosAlreadyOnSagaException">[docs]</a><span class="k">class</span> <span class="nc">MinosAlreadyOnSagaException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
+<div class="viewcode-block" id="MultipleOnErrorException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException">[docs]</a><span class="k">class</span> <span class="nc">MultipleOnErrorException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception to be raised when multiple on error methods are defined.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MultipleOnErrorException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only define one &#39;on_error&#39; method.&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AlreadyOnSagaException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyOnSagaException">[docs]</a><span class="k">class</span> <span class="nc">AlreadyOnSagaException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga step is already in another saga.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosAlreadyOnSagaException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosAlreadyOnSagaException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AlreadyOnSagaException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyOnSagaException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; can only belong to one &#39;Saga&#39; simultaneously.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosUndefinedInvokeParticipantException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosUndefinedInvokeParticipantException">[docs]</a><span class="k">class</span> <span class="nc">MinosUndefinedInvokeParticipantException</span><span class="p">(</span><span class="n">MinosSagaStepException</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exception to be raised when the invoke participant method is not defined.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="UndefinedOnExecuteException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.UndefinedOnExecuteException">[docs]</a><span class="k">class</span> <span class="nc">UndefinedOnExecuteException</span><span class="p">(</span><span class="n">SagaStepException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception to be raised when the on execute method is not defined.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosUndefinedInvokeParticipantException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosUndefinedInvokeParticipantException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="UndefinedOnExecuteException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.UndefinedOnExecuteException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; must define at least the &#39;invoke_participant&#39; logic.&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;A &#39;SagaStep&#39; must define at least the &#39;on_execute&#39; logic.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosSagaExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutionException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaExecutionException</span><span class="p">(</span><span class="n">MinosSagaException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaExecutionException">[docs]</a><span class="k">class</span> <span class="nc">SagaExecutionException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base exception for saga execution.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaExecutionNotFoundException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutionNotFoundException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaExecutionNotFoundException</span><span class="p">(</span><span class="n">MinosSagaExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaExecutionNotFoundException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaExecutionNotFoundException">[docs]</a><span class="k">class</span> <span class="nc">SagaExecutionNotFoundException</span><span class="p">(</span><span class="n">SagaExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution is not found.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaRollbackExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaRollbackExecutionException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaRollbackExecutionException</span><span class="p">(</span><span class="n">MinosSagaExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaRollbackExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException">[docs]</a><span class="k">class</span> <span class="nc">SagaRollbackExecutionException</span><span class="p">(</span><span class="n">SagaExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga exception cannot be rollbacked&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaNotCommittedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaNotCommittedException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaNotCommittedException</span><span class="p">(</span><span class="n">MinosSagaExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaNotCommittedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaNotCommittedException">[docs]</a><span class="k">class</span> <span class="nc">SagaNotCommittedException</span><span class="p">(</span><span class="n">SagaExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when trying to exec a  not committed saga.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaFailedExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaFailedExecutionException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaFailedExecutionException</span><span class="p">(</span><span class="n">MinosSagaExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaFailedExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaFailedExecutionException">[docs]</a><span class="k">class</span> <span class="nc">SagaFailedExecutionException</span><span class="p">(</span><span class="n">SagaExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution failed while running.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosSagaFailedExecutionException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaFailedExecutionException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaFailedExecutionException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaFailedExecutionException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exception</span> <span class="o">=</span> <span class="n">exception</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;There was a failure while &#39;SagaExecutionStep&#39; was executing: </span><span class="si">{</span><span class="n">exception</span><span class="si">!r}</span><span class="s2">&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;There was a failure while &#39;SagaStepExecution&#39; was executing: </span><span class="si">{</span><span class="n">exception</span><span class="si">!r}</span><span class="s2">&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosSagaExecutionAlreadyExecutedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaExecutionAlreadyExecutedException</span><span class="p">(</span><span class="n">MinosSagaExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaExecutionAlreadyExecutedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaExecutionAlreadyExecutedException">[docs]</a><span class="k">class</span> <span class="nc">SagaExecutionAlreadyExecutedException</span><span class="p">(</span><span class="n">SagaExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution cannot be executed.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaExecutionStepException</span><span class="p">(</span><span class="n">MinosSagaException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaStepExecutionException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepExecutionException">[docs]</a><span class="k">class</span> <span class="nc">SagaStepExecutionException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base exception for saga execution step.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaFailedExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaFailedExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaFailedExecutionStepException</span><span class="p">(</span><span class="n">MinosSagaExecutionStepException</span><span class="p">,</span> <span class="n">MinosSagaFailedExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaFailedExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaFailedExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">SagaFailedExecutionStepException</span><span class="p">(</span><span class="n">SagaStepExecutionException</span><span class="p">,</span> <span class="n">SagaFailedExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution step failed while running.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaPausedExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaPausedExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaPausedExecutionStepException</span><span class="p">(</span><span class="n">MinosSagaExecutionStepException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaPausedExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaPausedExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">SagaPausedExecutionStepException</span><span class="p">(</span><span class="n">SagaStepExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution step is paused.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosSagaPausedExecutionStepException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaPausedExecutionStepException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaPausedExecutionStepException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaPausedExecutionStepException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;There was a pause while &#39;SagaExecutionStep&#39; was executing.&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;There was a pause while &#39;SagaStepExecution&#39; was executing.&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosSagaRollbackExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaRollbackExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaRollbackExecutionStepException</span><span class="p">(</span><span class="n">MinosSagaExecutionStepException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaRollbackExecutionStepException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionStepException">[docs]</a><span class="k">class</span> <span class="nc">SagaRollbackExecutionStepException</span><span class="p">(</span><span class="n">SagaStepExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga execution step failed while performing a rollback.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaAlreadyCommittedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaAlreadyCommittedException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaAlreadyCommittedException</span><span class="p">(</span><span class="n">MinosSagaException</span><span class="p">):</span>
+<div class="viewcode-block" id="AlreadyCommittedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyCommittedException">[docs]</a><span class="k">class</span> <span class="nc">AlreadyCommittedException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when trying to modifying an already committed saga.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosSagaExecutorException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutorException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaExecutorException</span><span class="p">(</span><span class="n">MinosSagaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ExecutorException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.ExecutorException">[docs]</a><span class="k">class</span> <span class="nc">ExecutorException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga executor raises some exception.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MinosSagaExecutorException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaExecutorException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ExecutorException.__init__"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.ExecutorException.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exception</span> <span class="o">=</span> <span class="n">exception</span>
         <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;There was a failure while &#39;SagaExecutionStep&#39; was executing: </span><span class="si">{</span><span class="n">exception</span><span class="si">!r}</span><span class="s2">&quot;</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;There was a failure while &#39;SagaStepExecution&#39; was executing: </span><span class="si">{</span><span class="n">exception</span><span class="si">!r}</span><span class="s2">&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="MinosSagaFailedCommitCallbackException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosSagaFailedCommitCallbackException">[docs]</a><span class="k">class</span> <span class="nc">MinosSagaFailedCommitCallbackException</span><span class="p">(</span><span class="n">MinosSagaFailedExecutionException</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaFailedCommitCallbackException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.SagaFailedCommitCallbackException">[docs]</a><span class="k">class</span> <span class="nc">SagaFailedCommitCallbackException</span><span class="p">(</span><span class="n">SagaFailedExecutionException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be raised when a saga commit callback raises some exception&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="MinosCommandReplyFailedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.MinosCommandReplyFailedException">[docs]</a><span class="k">class</span> <span class="nc">MinosCommandReplyFailedException</span><span class="p">(</span><span class="n">MinosException</span><span class="p">):</span>
+<div class="viewcode-block" id="CommandReplyFailedException"><a class="viewcode-back" href="../../../api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException">[docs]</a><span class="k">class</span> <span class="nc">CommandReplyFailedException</span><span class="p">(</span><span class="n">SagaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception to be used when ``CommandStatus`` is not ``SUCCESS``&quot;&quot;&quot;</span></div>
 </pre></div>
 

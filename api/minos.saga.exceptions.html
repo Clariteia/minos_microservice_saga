@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.exceptions module &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.exceptions module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -181,143 +181,23 @@
   <div class="section" id="module-minos.saga.exceptions">
 <span id="minos-saga-exceptions-module"></span><h1>minos.saga.exceptions module<a class="headerlink" href="#module-minos.saga.exceptions" title="Permalink to this headline">¶</a></h1>
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosAlreadyOnSagaException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosAlreadyOnSagaException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosAlreadyOnSagaException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosAlreadyOnSagaException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
-<p>Exception to be raised when a saga step is already in another saga.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosAlreadyOnSagaException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosAlreadyOnSagaException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosAlreadyOnSagaException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosAlreadyOnSagaException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosAlreadyOnSagaException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosAlreadyOnSagaException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosAlreadyOnSagaException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosCommandReplyFailedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosCommandReplyFailedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosCommandReplyFailedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosCommandReplyFailedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.exceptions.MinosException</span></code></p>
-<p>Exception to be used when <code class="docutils literal notranslate"><span class="pre">CommandStatus</span></code> is not <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosCommandReplyFailedException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosCommandReplyFailedException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosCommandReplyFailedException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosCommandReplyFailedException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosCommandReplyFailedException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosCommandReplyFailedException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleInvokeParticipantException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosMultipleInvokeParticipantException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleInvokeParticipantException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleInvokeParticipantException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
-<p>Exception to be raised when multiple invoke participant methods are defined.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleInvokeParticipantException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleInvokeParticipantException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleInvokeParticipantException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleInvokeParticipantException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleInvokeParticipantException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleInvokeParticipantException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleInvokeParticipantException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleOnReplyException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosMultipleOnReplyException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleOnReplyException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleOnReplyException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
-<p>Exception to be raised when multiple on reply methods are defined.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleOnReplyException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleOnReplyException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleOnReplyException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleOnReplyException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleOnReplyException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleOnReplyException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleOnReplyException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleWithCompensationException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosMultipleWithCompensationException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleWithCompensationException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleWithCompensationException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
-<p>Exception to be raised when multiple with compensation methods are defined.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleWithCompensationException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosMultipleWithCompensationException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleWithCompensationException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleWithCompensationException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleWithCompensationException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosMultipleWithCompensationException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosMultipleWithCompensationException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaAlreadyCommittedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaAlreadyCommittedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaAlreadyCommittedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaAlreadyCommittedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaException" title="minos.saga.exceptions.MinosSagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyCommittedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">AlreadyCommittedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#AlreadyCommittedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.AlreadyCommittedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
 <p>Exception to be raised when trying to modifying an already committed saga.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaAlreadyCommittedException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaAlreadyCommittedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyCommittedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.AlreadyCommittedException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaAlreadyCommittedException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaAlreadyCommittedException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyCommittedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.AlreadyCommittedException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaAlreadyCommittedException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaAlreadyCommittedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyCommittedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.AlreadyCommittedException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -325,23 +205,71 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaEmptyStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaEmptyStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaEmptyStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaEmptyStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyOnSagaException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">AlreadyOnSagaException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#AlreadyOnSagaException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.AlreadyOnSagaException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when a saga step is already in another saga.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyOnSagaException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#AlreadyOnSagaException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.AlreadyOnSagaException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyOnSagaException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.AlreadyOnSagaException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.AlreadyOnSagaException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.AlreadyOnSagaException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.CommandReplyFailedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">CommandReplyFailedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#CommandReplyFailedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.CommandReplyFailedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
+<p>Exception to be used when <code class="docutils literal notranslate"><span class="pre">CommandStatus</span></code> is not <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.CommandReplyFailedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.CommandReplyFailedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.CommandReplyFailedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.CommandReplyFailedException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.CommandReplyFailedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.CommandReplyFailedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.EmptySagaStepException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">EmptySagaStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#EmptySagaStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.EmptySagaStepException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
 <p>Exception to be raised when the step is empty.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaEmptyStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaEmptyStepException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaEmptyStepException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.EmptySagaStepException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#EmptySagaStepException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.EmptySagaStepException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaEmptyStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaEmptyStepException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.EmptySagaStepException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.EmptySagaStepException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaEmptyStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaEmptyStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.EmptySagaStepException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.EmptySagaStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -349,23 +277,143 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaException" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.ExecutorException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">ExecutorException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#ExecutorException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.ExecutorException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
+<p>Exception to be raised when a saga executor raises some exception.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.ExecutorException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#ExecutorException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.ExecutorException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.ExecutorException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.ExecutorException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.ExecutorException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.ExecutorException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnErrorException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultipleOnErrorException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnErrorException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnErrorException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when multiple on error methods are defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnErrorException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnErrorException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnErrorException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnErrorException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnErrorException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnErrorException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnErrorException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnExecuteException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultipleOnExecuteException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnExecuteException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnExecuteException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when multiple on execute methods are defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnExecuteException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnExecuteException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnExecuteException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnExecuteException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnExecuteException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnExecuteException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnExecuteException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnFailureException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultipleOnFailureException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnFailureException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnFailureException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when multiple on failure methods are defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnFailureException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnFailureException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnFailureException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnFailureException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnFailureException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnFailureException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnFailureException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnSuccessException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultipleOnSuccessException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnSuccessException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnSuccessException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when multiple on success methods are defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnSuccessException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MultipleOnSuccessException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MultipleOnSuccessException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnSuccessException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnSuccessException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.MultipleOnSuccessException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MultipleOnSuccessException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.exceptions.MinosException</span></code></p>
 <p>Base saga exception.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -373,23 +421,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaExecutionAlreadyExecutedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutionAlreadyExecutedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionException" title="minos.saga.exceptions.MinosSagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionAlreadyExecutedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaExecutionAlreadyExecutedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaExecutionAlreadyExecutedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionAlreadyExecutedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaExecutionException" title="minos.saga.exceptions.SagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution cannot be executed.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionAlreadyExecutedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionAlreadyExecutedException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionAlreadyExecutedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionAlreadyExecutedException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionAlreadyExecutedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionAlreadyExecutedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionAlreadyExecutedException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -397,23 +445,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaException" title="minos.saga.exceptions.MinosSagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
 <p>Base exception for saga execution.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -421,23 +469,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionNotFoundException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaExecutionNotFoundException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutionNotFoundException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionNotFoundException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionException" title="minos.saga.exceptions.MinosSagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionNotFoundException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaExecutionNotFoundException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaExecutionNotFoundException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionNotFoundException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaExecutionException" title="minos.saga.exceptions.SagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution is not found.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionNotFoundException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionNotFoundException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionNotFoundException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionNotFoundException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionNotFoundException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionNotFoundException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionNotFoundException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionNotFoundException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionNotFoundException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionNotFoundException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaExecutionNotFoundException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaExecutionNotFoundException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -445,71 +493,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaException" title="minos.saga.exceptions.MinosSagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaException</span></code></a></p>
-<p>Base exception for saga execution step.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutionStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutorException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaExecutorException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutorException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutorException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaException" title="minos.saga.exceptions.MinosSagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaException</span></code></a></p>
-<p>Exception to be raised when a saga executor raises some exception.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutorException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaExecutorException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutorException.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutorException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutorException.args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaExecutorException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaExecutorException.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedCommitCallbackException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaFailedCommitCallbackException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaFailedCommitCallbackException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedCommitCallbackException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaFailedExecutionException" title="minos.saga.exceptions.MinosSagaFailedExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaFailedExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedCommitCallbackException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaFailedCommitCallbackException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaFailedCommitCallbackException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaFailedCommitCallbackException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaFailedExecutionException" title="minos.saga.exceptions.SagaFailedExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaFailedExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga commit callback raises some exception</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedCommitCallbackException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedCommitCallbackException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedCommitCallbackException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedCommitCallbackException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedCommitCallbackException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedCommitCallbackException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedCommitCallbackException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedCommitCallbackException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedCommitCallbackException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedCommitCallbackException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedCommitCallbackException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedCommitCallbackException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -517,23 +517,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaFailedExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaFailedExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionException" title="minos.saga.exceptions.MinosSagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaFailedExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaFailedExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaExecutionException" title="minos.saga.exceptions.SagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution failed while running.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaFailedExecutionException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaFailedExecutionException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -541,23 +541,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaFailedExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaFailedExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionStepException" title="minos.saga.exceptions.MinosSagaExecutionStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionStepException</span></code></a>, <a class="reference internal" href="#minos.saga.exceptions.MinosSagaFailedExecutionException" title="minos.saga.exceptions.MinosSagaFailedExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaFailedExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionStepException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaFailedExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaFailedExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionStepException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepExecutionException" title="minos.saga.exceptions.SagaStepExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepExecutionException</span></code></a>, <a class="reference internal" href="#minos.saga.exceptions.SagaFailedExecutionException" title="minos.saga.exceptions.SagaFailedExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaFailedExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution step failed while running.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionStepException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionStepException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaFailedExecutionStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaFailedExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaFailedExecutionStepException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaFailedExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -565,23 +565,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotCommittedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaNotCommittedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaNotCommittedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotCommittedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionException" title="minos.saga.exceptions.MinosSagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotCommittedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaNotCommittedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaNotCommittedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaNotCommittedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaExecutionException" title="minos.saga.exceptions.SagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaExecutionException</span></code></a></p>
 <p>Exception to be raised when trying to exec a  not committed saga.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotCommittedException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotCommittedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotCommittedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaNotCommittedException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotCommittedException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotCommittedException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotCommittedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaNotCommittedException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotCommittedException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotCommittedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotCommittedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaNotCommittedException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -589,23 +589,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotDefinedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaNotDefinedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaNotDefinedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotDefinedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotDefinedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaNotDefinedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaNotDefinedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaNotDefinedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
 <p>Exception to be raised when the saga is not defined.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotDefinedException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaNotDefinedException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotDefinedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotDefinedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaNotDefinedException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaNotDefinedException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotDefinedException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotDefinedException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotDefinedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaNotDefinedException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaNotDefinedException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaNotDefinedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaNotDefinedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaNotDefinedException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -613,23 +613,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaPausedExecutionStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaPausedExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaPausedExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaPausedExecutionStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionStepException" title="minos.saga.exceptions.MinosSagaExecutionStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionStepException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaPausedExecutionStepException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaPausedExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaPausedExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaPausedExecutionStepException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepExecutionException" title="minos.saga.exceptions.SagaStepExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution step is paused.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaPausedExecutionStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaPausedExecutionStepException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaPausedExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaPausedExecutionStepException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaPausedExecutionStepException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaPausedExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaPausedExecutionStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaPausedExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaPausedExecutionStepException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaPausedExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaPausedExecutionStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaPausedExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaPausedExecutionStepException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaPausedExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -637,23 +637,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaRollbackExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaRollbackExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionException" title="minos.saga.exceptions.MinosSagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaRollbackExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaRollbackExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaExecutionException" title="minos.saga.exceptions.SagaExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga exception cannot be rollbacked</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -661,23 +661,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaRollbackExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaRollbackExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaExecutionStepException" title="minos.saga.exceptions.MinosSagaExecutionStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaExecutionStepException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionStepException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaRollbackExecutionStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaRollbackExecutionStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionStepException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepExecutionException" title="minos.saga.exceptions.SagaStepExecutionException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepExecutionException</span></code></a></p>
 <p>Exception to be raised when a saga execution step failed while performing a rollback.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionStepException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionStepException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionStepException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionStepException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaRollbackExecutionStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaRollbackExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaRollbackExecutionStepException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaRollbackExecutionStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -685,23 +685,23 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaStepException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosSagaStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosSagaStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosSagaStepException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaException" title="minos.saga.exceptions.MinosSagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaException</span></code></a></p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaStepException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaStepException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaStepException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
 <p>Base exception for saga steps.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaStepException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaStepException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaStepException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaStepException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaStepException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaStepException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosSagaStepException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosSagaStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaStepException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -709,23 +709,47 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosUndefinedInvokeParticipantException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosUndefinedInvokeParticipantException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosUndefinedInvokeParticipantException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosUndefinedInvokeParticipantException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.MinosSagaStepException" title="minos.saga.exceptions.MinosSagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.MinosSagaStepException</span></code></a></p>
-<p>Exception to be raised when the invoke participant method is not defined.</p>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepExecutionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">SagaStepExecutionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#SagaStepExecutionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.SagaStepExecutionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaException" title="minos.saga.exceptions.SagaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaException</span></code></a></p>
+<p>Base exception for saga execution step.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosUndefinedInvokeParticipantException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#MinosUndefinedInvokeParticipantException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.MinosUndefinedInvokeParticipantException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepExecutionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaStepExecutionException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosUndefinedInvokeParticipantException.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.MinosUndefinedInvokeParticipantException.args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepExecutionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.SagaStepExecutionException.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="minos.saga.exceptions.MinosUndefinedInvokeParticipantException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.MinosUndefinedInvokeParticipantException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="minos.saga.exceptions.SagaStepExecutionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.SagaStepExecutionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.saga.exceptions.UndefinedOnExecuteException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.exceptions.</span></span><span class="sig-name descname"><span class="pre">UndefinedOnExecuteException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#UndefinedOnExecuteException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.UndefinedOnExecuteException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.saga.exceptions.SagaStepException" title="minos.saga.exceptions.SagaStepException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.exceptions.SagaStepException</span></code></a></p>
+<p>Exception to be raised when the on execute method is not defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.UndefinedOnExecuteException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/exceptions.html#UndefinedOnExecuteException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.exceptions.UndefinedOnExecuteException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.saga.exceptions.UndefinedOnExecuteException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.saga.exceptions.UndefinedOnExecuteException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.saga.exceptions.UndefinedOnExecuteException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.exceptions.UndefinedOnExecuteException.with_traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>

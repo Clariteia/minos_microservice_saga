@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.0.12 documentation</title>
+  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.1.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.12
+                0.1.0
               </div>
             
           
@@ -195,12 +195,16 @@
     <span class="k">return</span> <span class="n">x</span></div>
 
 
-<div class="viewcode-block" id="SagaOperation"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">[docs]</a><span class="k">class</span> <span class="nc">SagaOperation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaOperation"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">[docs]</a><span class="k">class</span> <span class="nc">SagaOperation</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Saga Step Operation class.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SagaOperation.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaContext</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaOperation.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">SagaContext</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">parameters</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="k">if</span> <span class="n">parameters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">SagaContext</span><span class="p">):</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="n">SagaContext</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">parameters</span></div>
 
     <span class="nd">@property</span>
@@ -211,9 +215,6 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># noinspection PyTypeChecker</span>
         <span class="n">raw</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;callback&quot;</span><span class="p">:</span> <span class="n">classname</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">)}</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">raw</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameterized</span><span class="p">:</span>
             <span class="n">raw</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">avro_str</span>
@@ -255,7 +256,6 @@
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">:</span>
         <span class="k">yield from</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
         <span class="p">)</span></div>
