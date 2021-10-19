@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.manager module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>minos.saga.manager module &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -182,13 +182,13 @@
 <span id="minos-saga-manager-module"></span><h1>minos.saga.manager module<a class="headerlink" href="#module-minos.saga.manager" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.manager.SagaManager">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.manager.</span></span><span class="sig-name descname"><span class="pre">SagaManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">storage</span></em>, <em class="sig-param"><span class="pre">dynamic_handler_pool=&lt;dependency_injector.wiring.Provide</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">*args</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/manager.html#SagaManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.manager.SagaManager" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.manager.</span></span><span class="sig-name descname"><span class="pre">SagaManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">storage</span></em>, <em class="sig-param"><span class="pre">dynamic_handler_pool=&lt;dependency_injector.wiring.Provide</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">user_context_var=None</span></em>, <em class="sig-param"><span class="pre">*args</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/manager.html#SagaManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.manager.SagaManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.saga.MinosSagaManager</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution" title="minos.saga.executions.saga.SagaExecution"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.saga.SagaExecution</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>]]</p>
 <p>Saga Manager implementation class.</p>
 <p>The purpose of this class is to manage the running process for new or paused``SagaExecution`` instances.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.manager.SagaManager.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">storage</span></em>, <em class="sig-param"><span class="pre">dynamic_handler_pool=&lt;dependency_injector.wiring.Provide</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">*args</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/manager.html#SagaManager.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.manager.SagaManager.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">storage</span></em>, <em class="sig-param"><span class="pre">dynamic_handler_pool=&lt;dependency_injector.wiring.Provide</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">user_context_var=None</span></em>, <em class="sig-param"><span class="pre">*args</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/manager.html#SagaManager.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.manager.SagaManager.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">

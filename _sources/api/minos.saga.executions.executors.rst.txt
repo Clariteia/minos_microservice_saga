@@ -13,6 +13,6 @@ Submodules
    :maxdepth: 4
 
    minos.saga.executions.executors.abc
-   minos.saga.executions.executors.commit
+   minos.saga.executions.executors.local
    minos.saga.executions.executors.request
    minos.saga.executions.executors.response

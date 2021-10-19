@@ -13,6 +13,7 @@ Subpackages
    :maxdepth: 4
 
    minos.saga.executions.executors
+   minos.saga.executions.steps
 
 Submodules
 ----------
@@ -22,5 +23,4 @@ Submodules
 
    minos.saga.executions.saga
    minos.saga.executions.status
-   minos.saga.executions.step
    minos.saga.executions.storage

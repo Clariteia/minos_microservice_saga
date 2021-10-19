@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>History &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>History &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -109,6 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id11">0.0.11 (2021-09-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id12">0.0.12 (2021-09-27)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id13">0.1.0 (2021-10-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">0.1.1 (2021-10-19)</a></li>
 </ul>
 </li>
 </ul>
@@ -280,6 +281,17 @@
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">CommitExecutor</span></code>.</p></li>
 <li><p>Rename <code class="docutils literal notranslate"><span class="pre">LocalExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">Executor</span></code>, <code class="docutils literal notranslate"><span class="pre">OnReplyExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">ResponseExecutor</span></code> and <code class="docutils literal notranslate"><span class="pre">PublishExecutor</span></code> as <code class="docutils literal notranslate"><span class="pre">RequestExecutor</span></code>.</p></li>
 <li><p>Simplify <code class="docutils literal notranslate"><span class="pre">SagaException</span></code> and heirs names.</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>0.1.1 (2021-10-19)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">ConditionalSagaStep</span></code> and <code class="docutils literal notranslate"><span class="pre">ConditionalSagaStepExecution</span></code> which allow to define conditional logic for steps within the <code class="docutils literal notranslate"><span class="pre">SagaExecution</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LocalSagaStep</span></code> and <code class="docutils literal notranslate"><span class="pre">LocalSagaStepExecution</span></code> classes which allow to execute local functions within the <code class="docutils literal notranslate"><span class="pre">SagaExecution</span></code>.</p></li>
+<li><p>Improve <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> and <code class="docutils literal notranslate"><span class="pre">SagaStepExecution</span></code> class hierarchy.</p></li>
+<li><p>Support dynamic <code class="docutils literal notranslate"><span class="pre">user</span></code> setup through a <code class="docutils literal notranslate"><span class="pre">ContextVar[Optional[UUID]]</span></code> variable.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">user</span></code> propagation from <code class="docutils literal notranslate"><span class="pre">SagaManager</span></code> to <code class="docutils literal notranslate"><span class="pre">RequestExecutor</span></code>.</p></li>
+<li><p>Improve <code class="docutils literal notranslate"><span class="pre">SagaContext</span></code> behaviour, allowing to dynamically change field types and also delete them as in any <code class="docutils literal notranslate"><span class="pre">dict</span></code> instance.</p></li>
 </ul>
 </div>
 </div>

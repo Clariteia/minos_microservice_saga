@@ -1,7 +1,0 @@
-minos.saga.executions.executors.commit module
-=============================================
-
-.. automodule:: minos.saga.executions.executors.commit
-   :members:
-   :undoc-members:
-   :show-inheritance:

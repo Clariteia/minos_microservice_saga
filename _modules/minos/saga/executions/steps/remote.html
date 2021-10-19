@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.step &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>minos.saga.executions.steps.remote &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -26,21 +26,21 @@
 
   
   <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
     
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../../../index.html" class="icon icon-home"> Minos Microservice Saga
+            <a href="../../../../../index.html" class="icon icon-home"> Minos Microservice Saga
           
 
           
@@ -64,14 +64,14 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -90,11 +90,11 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../readme.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../runthetests.html">Run the tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../api/minos.html">minos namespace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../history.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../readme.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../runthetests.html">Run the tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/minos.html">minos namespace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../history.html">History</a></li>
 </ul>
 
             
@@ -110,7 +110,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">Minos Microservice Saga</a>
+          <a href="../../../../../index.html">Minos Microservice Saga</a>
         
       </nav>
 
@@ -141,11 +141,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
         
-      <li>minos.saga.executions.step</li>
+      <li>minos.saga.executions.steps.remote</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -160,16 +160,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for minos.saga.executions.step</h1><div class="highlight"><pre>
+  <h1>Source code for minos.saga.executions.steps.remote</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">annotations</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">Any</span><span class="p">,</span>
-    <span class="n">Iterable</span><span class="p">,</span>
     <span class="n">Optional</span><span class="p">,</span>
-    <span class="n">Union</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
@@ -177,59 +174,42 @@
     <span class="n">CommandStatus</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..definitions</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">SagaStep</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">...definitions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RemoteSagaStep</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..exceptions</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">CommandReplyFailedException</span><span class="p">,</span>
     <span class="n">SagaFailedExecutionStepException</span><span class="p">,</span>
     <span class="n">SagaPausedExecutionStepException</span><span class="p">,</span>
     <span class="n">SagaRollbackExecutionStepException</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.executors</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">..executors</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RequestExecutor</span><span class="p">,</span>
     <span class="n">ResponseExecutor</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.status</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">..status</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaStepStatus</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.abc</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SagaStepExecution</span><span class="p">,</span>
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="SagaStepExecution"><a class="viewcode-back" href="../../../../api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution">[docs]</a><span class="k">class</span> <span class="nc">SagaStepExecution</span><span class="p">:</span>
+<div class="viewcode-block" id="RemoteSagaStepExecution"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution">[docs]</a><span class="k">class</span> <span class="nc">RemoteSagaStepExecution</span><span class="p">(</span><span class="n">SagaStepExecution</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Saga Execution Step class.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SagaStepExecution.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">SagaStep</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">SagaStepStatus</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Created</span><span class="p">,</span> <span class="n">already_rollback</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="p">):</span>
+    <span class="n">definition</span><span class="p">:</span> <span class="n">RemoteSagaStep</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="n">definition</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span> <span class="o">=</span> <span class="n">already_rollback</span></div>
-
-<div class="viewcode-block" id="SagaStepExecution.from_raw"><a class="viewcode-back" href="../../../../api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.from_raw">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">SagaStepExecution</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaStepExecution</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Build a new instance from a raw representation.</span>
-
-<span class="sd">        :param raw: The raw representation of the instance.</span>
-<span class="sd">        :param kwargs: Additional named arguments.</span>
-<span class="sd">        :return: A ``SagaStepExecution`` instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">raw</span>
-
-        <span class="n">current</span> <span class="o">=</span> <span class="n">raw</span> <span class="o">|</span> <span class="n">kwargs</span>
-        <span class="n">current</span><span class="p">[</span><span class="s2">&quot;definition&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SagaStep</span><span class="o">.</span><span class="n">from_raw</span><span class="p">(</span><span class="n">current</span><span class="p">[</span><span class="s2">&quot;definition&quot;</span><span class="p">])</span>
-        <span class="n">current</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">from_raw</span><span class="p">(</span><span class="n">current</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">])</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">current</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="SagaStepExecution.execute"><a class="viewcode-back" href="../../../../api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Execution the step.</span>
+<div class="viewcode-block" id="RemoteSagaStepExecution.execute"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Execution the remote step.</span>
 
 <span class="sd">        :param context: The execution context to be used during the execution.</span>
 <span class="sd">        :param reply: An optional command reply instance (to be consumed by the on_success method).</span>
+<span class="sd">        :param args: Additional positional arguments.</span>
+<span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: The updated context.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -291,10 +271,12 @@
 
         <span class="k">return</span> <span class="n">context</span>
 
-<div class="viewcode-block" id="SagaStepExecution.rollback"><a class="viewcode-back" href="../../../../api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.rollback">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Revert the executed operation with a compensatory operation.</span>
+<div class="viewcode-block" id="RemoteSagaStepExecution.rollback"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.rollback">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Revert the executed remote step.</span>
 
 <span class="sd">        :param context: Execution context.</span>
+<span class="sd">        :param args: Additional positional arguments.</span>
+<span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: The updated execution context.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Created</span><span class="p">:</span>
@@ -307,29 +289,7 @@
         <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_failure_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="n">context</span></div>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">raw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Compute a raw representation of the instance.</span>
-
-<span class="sd">        :return: A ``dict`` instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span>
-            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span>
-            <span class="s2">&quot;already_rollback&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span><span class="p">,</span>
-        <span class="p">}</span>
-
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">SagaStep</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">:</span>
-        <span class="k">yield from</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span><span class="p">,</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">context</span></div></div>
 </pre></div>
 
            </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.response module &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>minos.saga.executions.executors.response module &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="minos.saga.executions.saga module" href="minos.saga.executions.saga.html" />
+    <link rel="next" title="minos.saga.executions.steps package" href="minos.saga.executions.steps.html" />
     <link rel="prev" title="minos.saga.executions.executors.request module" href="minos.saga.executions.executors.request.html" /> 
 </head>
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -201,7 +201,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>operation</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation" title="minos.saga.definitions.operations.SagaOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.operations.SagaOperation</span></code></a>]) – Operation to be executed.</p></li>
+<li><p><strong>operation</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation" title="minos.saga.definitions.operations.SagaOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.definitions.operations.SagaOperation</span></code></a>[<code class="xref py py-data docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code>[<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <a class="reference internal" href="minos.saga.messages.html#minos.saga.messages.SagaResponse" title="minos.saga.messages.SagaResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.messages.SagaResponse</span></code></a>, …, <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Awaitable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code>, <a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>]]]]]]) – Operation to be executed.</p></li>
 <li><p><strong>context</strong> (<a class="reference internal" href="minos.saga.context.html#minos.saga.context.SagaContext" title="minos.saga.context.SagaContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.context.SagaContext</span></code></a>) – Actual execution context.</p></li>
 <li><p><strong>reply</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">minos.common.model.declarative.networks.CommandReply</span></code>) – Command Reply which contains the response.</p></li>
 <li><p><strong>args</strong> – Additional positional arguments.</p></li>
@@ -248,7 +248,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="minos.saga.executions.saga.html" class="btn btn-neutral float-right" title="minos.saga.executions.saga module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="minos.saga.executions.steps.html" class="btn btn-neutral float-right" title="minos.saga.executions.steps package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="minos.saga.executions.executors.request.html" class="btn btn-neutral float-left" title="minos.saga.executions.executors.request module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

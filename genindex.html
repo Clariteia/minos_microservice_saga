@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>Index &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -195,7 +195,17 @@
 </li>
         <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.__init__">(minos.saga.definitions.saga.Saga method)</a>
 </li>
-        <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.__init__">(minos.saga.definitions.step.SagaStep method)</a>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.__init__">(minos.saga.definitions.steps.abc.SagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.__init__">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ElseThenAlternative.__init__">(minos.saga.definitions.steps.conditional.ElseThenAlternative method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.IfThenAlternative.__init__">(minos.saga.definitions.steps.conditional.IfThenAlternative method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.__init__">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.__init__">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyCommittedException.__init__">(minos.saga.exceptions.AlreadyCommittedException method)</a>
 </li>
@@ -203,9 +213,13 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.__init__">(minos.saga.exceptions.CommandReplyFailedException method)</a>
 </li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.__init__">(minos.saga.exceptions.EmptySagaException method)</a>
+</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.__init__">(minos.saga.exceptions.EmptySagaStepException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.ExecutorException.__init__">(minos.saga.exceptions.ExecutorException method)</a>
+</li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleElseThenException.__init__">(minos.saga.exceptions.MultipleElseThenException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException.__init__">(minos.saga.exceptions.MultipleOnErrorException method)</a>
 </li>
@@ -247,7 +261,7 @@
 </li>
         <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.__init__">(minos.saga.executions.executors.abc.Executor method)</a>
 </li>
-        <li><a href="api/minos.saga.executions.executors.commit.html#minos.saga.executions.executors.commit.CommitExecutor.__init__">(minos.saga.executions.executors.commit.CommitExecutor method)</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor.__init__">(minos.saga.executions.executors.local.LocalExecutor method)</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor.__init__">(minos.saga.executions.executors.request.RequestExecutor method)</a>
 </li>
@@ -255,7 +269,13 @@
 </li>
         <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.__init__">(minos.saga.executions.saga.SagaExecution method)</a>
 </li>
-        <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.__init__">(minos.saga.executions.step.SagaStepExecution method)</a>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.__init__">(minos.saga.executions.steps.abc.SagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.__init__">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.__init__">(minos.saga.executions.steps.local.LocalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.__init__">(minos.saga.executions.steps.remote.RemoteSagaStepExecution method)</a>
 </li>
         <li><a href="api/minos.saga.executions.storage.html#minos.saga.executions.storage.SagaExecutionStorage.__init__">(minos.saga.executions.storage.SagaExecutionStorage method)</a>
 </li>
@@ -287,9 +307,13 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.args">(minos.saga.exceptions.CommandReplyFailedException attribute)</a>
 </li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.args">(minos.saga.exceptions.EmptySagaException attribute)</a>
+</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.args">(minos.saga.exceptions.EmptySagaStepException attribute)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.ExecutorException.args">(minos.saga.exceptions.ExecutorException attribute)</a>
+</li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleElseThenException.args">(minos.saga.exceptions.MultipleElseThenException attribute)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException.args">(minos.saga.exceptions.MultipleOnErrorException attribute)</a>
 </li>
@@ -348,19 +372,41 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.classname">classname (minos.saga.context.SagaContext attribute)</a>
 </li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.clear">clear() (minos.saga.context.SagaContext method)</a>
+</li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException">CommandReplyFailedException</a>
 </li>
       <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.commit">commit() (minos.saga.definitions.saga.Saga method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.commit">(minos.saga.definitions.step.SagaStep method)</a>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.commit">(minos.saga.definitions.steps.abc.SagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.commit">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.commit">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.commit">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
       </ul></li>
-      <li><a href="api/minos.saga.executions.executors.commit.html#minos.saga.executions.executors.commit.CommitExecutor">CommitExecutor (class in minos.saga.executions.executors.commit)</a>
+      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.committed">committed (minos.saga.definitions.saga.Saga property)</a>
 </li>
+      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.conditional_step">conditional_step() (minos.saga.definitions.saga.Saga method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.conditional_step">(minos.saga.definitions.steps.abc.SagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.conditional_step">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.conditional_step">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.conditional_step">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.committed">committed (minos.saga.definitions.saga.Saga property)</a>
+      <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep">ConditionalSagaStep (class in minos.saga.definitions.steps.conditional)</a>
+</li>
+      <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution">ConditionalSagaStepExecution (class in minos.saga.executions.steps.conditional)</a>
 </li>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaRequest.content">content() (minos.saga.messages.SagaRequest method)</a>
 
@@ -380,10 +426,18 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.executions.storage.html#minos.saga.executions.storage.SagaExecutionStorage.delete">delete() (minos.saga.executions.storage.SagaExecutionStorage method)</a>
+      <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.definition">definition (minos.saga.executions.steps.conditional.ConditionalSagaStepExecution attribute)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.definition">(minos.saga.executions.steps.local.LocalSagaStepExecution attribute)</a>
 </li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.definition">(minos.saga.executions.steps.remote.RemoteSagaStepExecution attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.executions.storage.html#minos.saga.executions.storage.SagaExecutionStorage.delete">delete() (minos.saga.executions.storage.SagaExecutionStorage method)</a>
+</li>
       <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.destroy">destroy() (minos.saga.manager.SagaManager method)</a>
 </li>
   </ul></td>
@@ -392,7 +446,13 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.else_then">else_then() (minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+      <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ElseThenAlternative">ElseThenAlternative (class in minos.saga.definitions.steps.conditional)</a>
+</li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.empty">empty() (minos.saga.context.SagaContext class method)</a>
+</li>
+      <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException">EmptySagaException</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException">EmptySagaStepException</a>
 </li>
@@ -413,7 +473,7 @@
       <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.exec">exec() (minos.saga.executions.executors.abc.Executor method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.executions.executors.commit.html#minos.saga.executions.executors.commit.CommitExecutor.exec">(minos.saga.executions.executors.commit.CommitExecutor method)</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor.exec">(minos.saga.executions.executors.local.LocalExecutor method)</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor.exec">(minos.saga.executions.executors.request.RequestExecutor method)</a>
 </li>
@@ -425,7 +485,7 @@
       <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.exec_function">exec_function() (minos.saga.executions.executors.abc.Executor static method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.executions.executors.commit.html#minos.saga.executions.executors.commit.CommitExecutor.exec_function">(minos.saga.executions.executors.commit.CommitExecutor static method)</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor.exec_function">(minos.saga.executions.executors.local.LocalExecutor static method)</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor.exec_function">(minos.saga.executions.executors.request.RequestExecutor static method)</a>
 </li>
@@ -435,7 +495,13 @@
       <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.execute">execute() (minos.saga.executions.saga.SagaExecution method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.execute">(minos.saga.executions.step.SagaStepExecution method)</a>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.execute">(minos.saga.executions.steps.abc.SagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.execute">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.execute">(minos.saga.executions.steps.local.LocalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.execute">(minos.saga.executions.steps.remote.RemoteSagaStepExecution method)</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor">Executor (class in minos.saga.executions.executors.abc)</a>
@@ -470,16 +536,36 @@
         <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.from_config">(minos.saga.manager.SagaManager class method)</a>
 </li>
       </ul></li>
+      <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.from_definition">from_definition() (minos.saga.executions.saga.SagaExecution class method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.from_definition">(minos.saga.executions.steps.abc.SagaStepExecution static method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.from_definition">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution static method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.from_definition">(minos.saga.executions.steps.local.LocalSagaStepExecution static method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.from_definition">(minos.saga.executions.steps.remote.RemoteSagaStepExecution static method)</a>
+</li>
+      </ul></li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.from_model_type">from_model_type() (minos.saga.context.SagaContext class method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.from_raw">from_raw() (minos.saga.definitions.operations.SagaOperation class method)</a>
 
       <ul>
         <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.from_raw">(minos.saga.definitions.saga.Saga class method)</a>
 </li>
-        <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.from_raw">(minos.saga.definitions.step.SagaStep class method)</a>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.from_raw">(minos.saga.definitions.steps.abc.SagaStep class method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.from_raw">(minos.saga.definitions.steps.conditional.ConditionalSagaStep class method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ElseThenAlternative.from_raw">(minos.saga.definitions.steps.conditional.ElseThenAlternative class method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.IfThenAlternative.from_raw">(minos.saga.definitions.steps.conditional.IfThenAlternative class method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.from_raw">(minos.saga.definitions.steps.local.LocalSagaStep class method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.from_raw">(minos.saga.definitions.steps.remote.RemoteSagaStep class method)</a>
 </li>
         <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.from_raw">(minos.saga.executions.saga.SagaExecution class method)</a>
 </li>
@@ -487,11 +573,19 @@
 </li>
         <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus.from_raw">(minos.saga.executions.status.SagaStepStatus class method)</a>
 </li>
-        <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.from_raw">(minos.saga.executions.step.SagaStepExecution class method)</a>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.from_raw">(minos.saga.executions.steps.abc.SagaStepExecution class method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.from_raw">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution class method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.from_raw">(minos.saga.executions.steps.local.LocalSagaStepExecution class method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.from_raw">(minos.saga.executions.steps.remote.RemoteSagaStepExecution class method)</a>
 </li>
         <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponseStatus.from_raw">(minos.saga.messages.SagaResponseStatus class method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.from_saga">from_saga() (minos.saga.executions.saga.SagaExecution class method)</a>
 </li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.from_typed_dict">from_typed_dict() (minos.saga.context.SagaContext class method)</a>
@@ -512,8 +606,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.identity_fn">identity_fn() (in module minos.saga.definitions.operations)</a>
 </li>
+      <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.if_then">if_then() (minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.IfThenAlternative">IfThenAlternative (class in minos.saga.definitions.steps.conditional)</a>
+</li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.items">items() (minos.saga.context.SagaContext method)</a>
 </li>
   </ul></td>
@@ -531,6 +629,26 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.executions.storage.html#minos.saga.executions.storage.SagaExecutionStorage.load">load() (minos.saga.executions.storage.SagaExecutionStorage method)</a>
+</li>
+      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.local_step">local_step() (minos.saga.definitions.saga.Saga method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.local_step">(minos.saga.definitions.steps.abc.SagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.local_step">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.local_step">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.local_step">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor">LocalExecutor (class in minos.saga.executions.executors.local)</a>
+</li>
+      <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep">LocalSagaStep (class in minos.saga.definitions.steps.local)</a>
+</li>
+      <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution">LocalSagaStepExecution (class in minos.saga.executions.steps.local)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -574,10 +692,38 @@
 </li>
       </ul></li>
       <li>
-    minos.saga.definitions.step
+    minos.saga.definitions.steps
 
       <ul>
-        <li><a href="api/minos.saga.definitions.step.html#module-minos.saga.definitions.step">module</a>
+        <li><a href="api/minos.saga.definitions.steps.html#module-minos.saga.definitions.steps">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.definitions.steps.abc
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#module-minos.saga.definitions.steps.abc">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.definitions.steps.conditional
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#module-minos.saga.definitions.steps.conditional">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.definitions.steps.local
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.local.html#module-minos.saga.definitions.steps.local">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.definitions.steps.remote
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#module-minos.saga.definitions.steps.remote">module</a>
 </li>
       </ul></li>
       <li>
@@ -616,10 +762,10 @@
 </li>
       </ul></li>
       <li>
-    minos.saga.executions.executors.commit
+    minos.saga.executions.executors.local
 
       <ul>
-        <li><a href="api/minos.saga.executions.executors.commit.html#module-minos.saga.executions.executors.commit">module</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#module-minos.saga.executions.executors.local">module</a>
 </li>
       </ul></li>
       <li>
@@ -651,14 +797,42 @@
 </li>
       </ul></li>
       <li>
-    minos.saga.executions.step
+    minos.saga.executions.steps
 
       <ul>
-        <li><a href="api/minos.saga.executions.step.html#module-minos.saga.executions.step">module</a>
+        <li><a href="api/minos.saga.executions.steps.html#module-minos.saga.executions.steps">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.executions.steps.abc
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.abc.html#module-minos.saga.executions.steps.abc">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.executions.steps.conditional
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#module-minos.saga.executions.steps.conditional">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    minos.saga.executions.steps.local
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.local.html#module-minos.saga.executions.steps.local">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.executions.steps.remote
+
+      <ul>
+        <li><a href="api/minos.saga.executions.steps.remote.html#module-minos.saga.executions.steps.remote">module</a>
+</li>
+      </ul></li>
       <li>
     minos.saga.executions.storage
 
@@ -696,7 +870,15 @@
 </li>
         <li><a href="api/minos.saga.definitions.saga.html#module-minos.saga.definitions.saga">minos.saga.definitions.saga</a>
 </li>
-        <li><a href="api/minos.saga.definitions.step.html#module-minos.saga.definitions.step">minos.saga.definitions.step</a>
+        <li><a href="api/minos.saga.definitions.steps.html#module-minos.saga.definitions.steps">minos.saga.definitions.steps</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#module-minos.saga.definitions.steps.abc">minos.saga.definitions.steps.abc</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#module-minos.saga.definitions.steps.conditional">minos.saga.definitions.steps.conditional</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#module-minos.saga.definitions.steps.local">minos.saga.definitions.steps.local</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#module-minos.saga.definitions.steps.remote">minos.saga.definitions.steps.remote</a>
 </li>
         <li><a href="api/minos.saga.definitions.types.html#module-minos.saga.definitions.types">minos.saga.definitions.types</a>
 </li>
@@ -708,7 +890,7 @@
 </li>
         <li><a href="api/minos.saga.executions.executors.abc.html#module-minos.saga.executions.executors.abc">minos.saga.executions.executors.abc</a>
 </li>
-        <li><a href="api/minos.saga.executions.executors.commit.html#module-minos.saga.executions.executors.commit">minos.saga.executions.executors.commit</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#module-minos.saga.executions.executors.local">minos.saga.executions.executors.local</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.request.html#module-minos.saga.executions.executors.request">minos.saga.executions.executors.request</a>
 </li>
@@ -718,7 +900,15 @@
 </li>
         <li><a href="api/minos.saga.executions.status.html#module-minos.saga.executions.status">minos.saga.executions.status</a>
 </li>
-        <li><a href="api/minos.saga.executions.step.html#module-minos.saga.executions.step">minos.saga.executions.step</a>
+        <li><a href="api/minos.saga.executions.steps.html#module-minos.saga.executions.steps">minos.saga.executions.steps</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.abc.html#module-minos.saga.executions.steps.abc">minos.saga.executions.steps.abc</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#module-minos.saga.executions.steps.conditional">minos.saga.executions.steps.conditional</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#module-minos.saga.executions.steps.local">minos.saga.executions.steps.local</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#module-minos.saga.executions.steps.remote">minos.saga.executions.steps.remote</a>
 </li>
         <li><a href="api/minos.saga.executions.storage.html#module-minos.saga.executions.storage">minos.saga.executions.storage</a>
 </li>
@@ -727,6 +917,8 @@
         <li><a href="api/minos.saga.messages.html#module-minos.saga.messages">minos.saga.messages</a>
 </li>
       </ul></li>
+      <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleElseThenException">MultipleElseThenException</a>
+</li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException">MultipleOnErrorException</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnExecuteException">MultipleOnExecuteException</a>
@@ -743,15 +935,23 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse.ok">ok (minos.saga.messages.SagaResponse property)</a>
 </li>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.on_error">on_error() (minos.saga.definitions.step.SagaStep method)</a>
+      <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.on_error">on_error() (minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
+      <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.on_execute">on_execute() (minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.on_execute">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.on_execute">on_execute() (minos.saga.definitions.step.SagaStep method)</a>
+      <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.on_failure">on_failure() (minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.on_failure">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.on_failure">on_failure() (minos.saga.definitions.step.SagaStep method)</a>
-</li>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.on_success">on_success() (minos.saga.definitions.step.SagaStep method)</a>
+      </ul></li>
+      <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.on_success">on_success() (minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -763,11 +963,15 @@
 </li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStatus.Paused">Paused (minos.saga.executions.status.SagaStatus attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus.PausedByOnExecute">PausedByOnExecute (minos.saga.executions.status.SagaStepStatus attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus.PausedOnFailure">PausedOnFailure (minos.saga.executions.status.SagaStepStatus attribute)</a>
+</li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.pop">pop() (minos.saga.context.SagaContext method)</a>
+</li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.popitem">popitem() (minos.saga.context.SagaContext method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -780,7 +984,17 @@
       <ul>
         <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.raw">(minos.saga.definitions.saga.Saga property)</a>
 </li>
-        <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.raw">(minos.saga.definitions.step.SagaStep property)</a>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.raw">(minos.saga.definitions.steps.abc.SagaStep property)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.raw">(minos.saga.definitions.steps.conditional.ConditionalSagaStep property)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ElseThenAlternative.raw">(minos.saga.definitions.steps.conditional.ElseThenAlternative property)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.IfThenAlternative.raw">(minos.saga.definitions.steps.conditional.IfThenAlternative property)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.raw">(minos.saga.definitions.steps.local.LocalSagaStep property)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.raw">(minos.saga.definitions.steps.remote.RemoteSagaStep property)</a>
 </li>
         <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.raw">(minos.saga.executions.saga.SagaExecution property)</a>
 </li>
@@ -788,19 +1002,47 @@
 </li>
         <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus.raw">(minos.saga.executions.status.SagaStepStatus property)</a>
 </li>
-        <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.raw">(minos.saga.executions.step.SagaStepExecution property)</a>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.raw">(minos.saga.executions.steps.abc.SagaStepExecution property)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.raw">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution property)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.raw">(minos.saga.executions.steps.local.LocalSagaStepExecution property)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.raw">(minos.saga.executions.steps.remote.RemoteSagaStepExecution property)</a>
 </li>
       </ul></li>
-      <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor">RequestExecutor (class in minos.saga.executions.executors.request)</a>
+      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.remote_step">remote_step() (minos.saga.definitions.saga.Saga method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.remote_step">(minos.saga.definitions.steps.abc.SagaStep method)</a>
 </li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.remote_step">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.remote_step">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.remote_step">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep">RemoteSagaStep (class in minos.saga.definitions.steps.remote)</a>
+</li>
+      <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution">RemoteSagaStepExecution (class in minos.saga.executions.steps.remote)</a>
+</li>
+      <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor">RequestExecutor (class in minos.saga.executions.executors.request)</a>
+</li>
       <li><a href="api/minos.saga.executions.executors.response.html#minos.saga.executions.executors.response.ResponseExecutor">ResponseExecutor (class in minos.saga.executions.executors.response)</a>
 </li>
       <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.rollback">rollback() (minos.saga.executions.saga.SagaExecution method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution.rollback">(minos.saga.executions.step.SagaStepExecution method)</a>
+        <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.rollback">(minos.saga.executions.steps.abc.SagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.conditional.html#minos.saga.executions.steps.conditional.ConditionalSagaStepExecution.rollback">(minos.saga.executions.steps.conditional.ConditionalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.local.html#minos.saga.executions.steps.local.LocalSagaStepExecution.rollback">(minos.saga.executions.steps.local.LocalSagaStepExecution method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.rollback">(minos.saga.executions.steps.remote.RemoteSagaStepExecution method)</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.run">run() (minos.saga.manager.SagaManager method)</a>
@@ -855,27 +1097,29 @@
 </li>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaRequest">SagaRequest (class in minos.saga.messages)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse">SagaResponse (class in minos.saga.messages)</a>
 </li>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponseStatus">SagaResponseStatus (class in minos.saga.messages)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException">SagaRollbackExecutionException</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionStepException">SagaRollbackExecutionStepException</a>
 </li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStatus">SagaStatus (class in minos.saga.executions.status)</a>
 </li>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep">SagaStep (class in minos.saga.definitions.step)</a>
+      <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep">SagaStep (class in minos.saga.definitions.steps.abc)</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepException">SagaStepException</a>
 </li>
-      <li><a href="api/minos.saga.executions.step.html#minos.saga.executions.step.SagaStepExecution">SagaStepExecution (class in minos.saga.executions.step)</a>
+      <li><a href="api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution">SagaStepExecution (class in minos.saga.executions.steps.abc)</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepExecutionException">SagaStepExecutionException</a>
 </li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus">SagaStepStatus (class in minos.saga.executions.status)</a>
+</li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.setdefault">setdefault() (minos.saga.context.SagaContext method)</a>
 </li>
       <li><a href="api/minos.saga.manager.html#minos.saga.manager.SagaManager.setup">setup() (minos.saga.manager.SagaManager method)</a>
 </li>
@@ -884,7 +1128,13 @@
       <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.step">step() (minos.saga.definitions.saga.Saga method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.step">(minos.saga.definitions.step.SagaStep method)</a>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.step">(minos.saga.definitions.steps.abc.SagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.step">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.step">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.step">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.executions.storage.html#minos.saga.executions.storage.SagaExecutionStorage.store">store() (minos.saga.executions.storage.SagaExecutionStorage method)</a>
@@ -920,13 +1170,31 @@
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.UndefinedOnExecuteException">UndefinedOnExecuteException</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.update">update() (minos.saga.context.SagaContext method)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.definitions.step.html#minos.saga.definitions.step.SagaStep.validate">validate() (minos.saga.definitions.step.SagaStep method)</a>
+      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.validate">validate() (minos.saga.definitions.saga.Saga method)</a>
+
+      <ul>
+        <li><a href="api/minos.saga.definitions.steps.abc.html#minos.saga.definitions.steps.abc.SagaStep.validate">(minos.saga.definitions.steps.abc.SagaStep method)</a>
 </li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.validate">(minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ElseThenAlternative.validate">(minos.saga.definitions.steps.conditional.ElseThenAlternative method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.IfThenAlternative.validate">(minos.saga.definitions.steps.conditional.IfThenAlternative method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep.validate">(minos.saga.definitions.steps.local.LocalSagaStep method)</a>
+</li>
+        <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.validate">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.values">values() (minos.saga.context.SagaContext method)</a>
@@ -944,9 +1212,13 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.with_traceback">(minos.saga.exceptions.CommandReplyFailedException method)</a>
 </li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.with_traceback">(minos.saga.exceptions.EmptySagaException method)</a>
+</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.with_traceback">(minos.saga.exceptions.EmptySagaStepException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.ExecutorException.with_traceback">(minos.saga.exceptions.ExecutorException method)</a>
+</li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleElseThenException.with_traceback">(minos.saga.exceptions.MultipleElseThenException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleOnErrorException.with_traceback">(minos.saga.exceptions.MultipleOnErrorException method)</a>
 </li>

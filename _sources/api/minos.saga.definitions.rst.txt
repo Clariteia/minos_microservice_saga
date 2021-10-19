@@ -6,6 +6,14 @@ minos.saga.definitions package
    :undoc-members:
    :show-inheritance:
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.saga.definitions.steps
+
 Submodules
 ----------
 
@@ -14,5 +22,4 @@ Submodules
 
    minos.saga.definitions.operations
    minos.saga.definitions.saga
-   minos.saga.definitions.step
    minos.saga.definitions.types

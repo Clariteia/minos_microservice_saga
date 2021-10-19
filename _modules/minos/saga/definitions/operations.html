@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.1.0 documentation</title>
+  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.1.1 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -168,6 +168,7 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Any</span><span class="p">,</span>
     <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Generic</span><span class="p">,</span>
     <span class="n">Iterable</span><span class="p">,</span>
     <span class="n">Optional</span><span class="p">,</span>
     <span class="n">TypeVar</span><span class="p">,</span>
@@ -183,10 +184,10 @@
     <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Callable</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="identity_fn"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.identity_fn">[docs]</a><span class="k">def</span> <span class="nf">identity_fn</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+<div class="viewcode-block" id="identity_fn"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.identity_fn">[docs]</a><span class="k">def</span> <span class="nf">identity_fn</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A identity function, that returns the same value without any transformation.</span>
 
 <span class="sd">    :param x: The input value.</span>
@@ -195,10 +196,10 @@
     <span class="k">return</span> <span class="n">x</span></div>
 
 
-<div class="viewcode-block" id="SagaOperation"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">[docs]</a><span class="k">class</span> <span class="nc">SagaOperation</span><span class="p">:</span>
+<div class="viewcode-block" id="SagaOperation"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">[docs]</a><span class="k">class</span> <span class="nc">SagaOperation</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Saga Step Operation class.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SagaOperation.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">SagaContext</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="SagaOperation.__init__"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">SagaContext</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">parameters</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="n">parameters</span> <span class="o">=</span> <span class="n">kwargs</span>
         <span class="k">if</span> <span class="n">parameters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">SagaContext</span><span class="p">):</span>
@@ -230,7 +231,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="SagaOperation.from_raw"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation.from_raw">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">SagaOperation</span><span class="p">]],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaOperation</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">from_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">SagaOperation</span><span class="p">[</span><span class="n">T</span><span class="p">]]],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaOperation</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Build a new instance from a raw representation.</span>
 
 <span class="sd">        :param raw: A raw representation.</span>
