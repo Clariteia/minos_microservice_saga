@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.request &mdash; Minos Microservice Saga 0.1.1 documentation</title>
+  <title>minos.saga.executions.executors.request &mdash; Minos Microservice Saga 0.2.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.1.1
+                0.2.0
               </div>
             
           
@@ -179,7 +179,7 @@
 
 <span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MinosBroker</span><span class="p">,</span>
-    <span class="n">MinosBrokerNotProvidedException</span><span class="p">,</span>
+    <span class="n">NotProvidedException</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
@@ -224,7 +224,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user</span>
 
         <span class="k">if</span> <span class="n">broker</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span> <span class="n">Provide</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="n">MinosBrokerNotProvidedException</span><span class="p">(</span><span class="s2">&quot;A broker instance is required.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">NotProvidedException</span><span class="p">(</span><span class="s2">&quot;A broker instance is required.&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">broker</span></div>
 
