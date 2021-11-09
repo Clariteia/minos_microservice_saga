@@ -1,6 +1,4 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 import logging
 import warnings
@@ -10,13 +8,9 @@ from typing import (
     Optional,
     Union,
 )
-from uuid import (
-    UUID,
-)
+from uuid import UUID
 
-from ..context import (
-    SagaContext,
-)
+from ..context import SagaContext
 from ..definitions import (
     Saga,
     SagaStep,
@@ -29,18 +23,10 @@ from ..exceptions import (
     SagaRollbackExecutionException,
     SagaStepExecutionException,
 )
-from .commit import (
-    TransactionManager,
-)
-from ..messages import (
-    SagaResponse,
-)
-from .executors import (
-    LocalExecutor,
-)
-from .status import (
-    SagaStatus,
-)
+from .commit import TransactionManager
+from ..messages import SagaResponse
+from .executors import LocalExecutor
+from .status import SagaStatus
 from .steps import (
     RemoteSagaStepExecution,
     SagaStepExecution,
@@ -145,9 +131,7 @@ class SagaExecution:
         :return: A new ``SagaExecution`` instance.
         """
         if uuid is None:
-            from uuid import (
-                uuid4,
-            )
+            from uuid import uuid4
 
             uuid = uuid4()
 

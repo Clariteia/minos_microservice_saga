@@ -1,10 +1,6 @@
 import logging
-from typing import (
-    Optional,
-)
-from uuid import (
-    UUID,
-)
+from typing import Optional
+from uuid import UUID
 
 from dependency_injector.wiring import (
     Provide,
