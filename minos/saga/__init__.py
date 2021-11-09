@@ -1,6 +1,8 @@
 __version__ = "0.2.0"
 
-from .context import SagaContext
+from .context import (
+    SagaContext,
+)
 from .definitions import (
     ConditionalSagaStep,
     ElseThenAlternative,
@@ -54,7 +56,9 @@ from .executions import (
     SagaStepStatus,
     TransactionManager,
 )
-from .manager import SagaManager
+from .manager import (
+    SagaManager,
+)
 from .messages import (
     SagaRequest,
     SagaResponse,
