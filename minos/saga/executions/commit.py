@@ -1,16 +1,12 @@
 import logging
-from uuid import (
-    UUID,
-)
+from uuid import UUID
 
 from dependency_injector.wiring import (
     Provide,
     inject,
 )
 
-from minos.common import (
-    NULL_UUID,
-)
+from minos.common import NULL_UUID
 from minos.networks import (
     CommandBroker,
     CommandReply,
@@ -18,9 +14,7 @@ from minos.networks import (
     DynamicHandlerPool,
 )
 
-from .steps import (
-    SagaStepExecution,
-)
+from .steps import SagaStepExecution
 
 logger = logging.getLogger(__name__)
 

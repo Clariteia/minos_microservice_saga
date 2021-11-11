@@ -3,13 +3,9 @@ from unittest.mock import (
     MagicMock,
     call,
 )
-from uuid import (
-    uuid4,
-)
+from uuid import uuid4
 
-from minos.common import (
-    NotProvidedException,
-)
+from minos.common import NotProvidedException
 from minos.saga import (
     Executor,
     RequestExecutor,

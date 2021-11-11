@@ -7,9 +7,7 @@ from minos.aggregate import (
     EventRepositoryConflictException,
     TransactionRepository,
 )
-from minos.common import (
-    MinosConfig,
-)
+from minos.common import MinosConfig
 from minos.networks import (
     CommandReply,
     EnrouteDecorator,

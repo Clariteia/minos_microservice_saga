@@ -1,20 +1,12 @@
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 import sys
 import typing as t
 import unittest
-from pathlib import (
-    Path,
-)
-from typing import (
-    Any,
-)
+from pathlib import Path
+from typing import Any
 
-from aiomisc.pool import (
-    T,
-)
+from aiomisc.pool import T
 from dependency_injector import (
     containers,
     providers,

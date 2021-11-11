@@ -1,14 +1,8 @@
 import unittest
 import warnings
-from collections import (
-    namedtuple,
-)
-from contextvars import (
-    ContextVar,
-)
-from shutil import (
-    rmtree,
-)
+from collections import namedtuple
+from contextvars import ContextVar
+from shutil import rmtree
 from unittest.mock import (
     AsyncMock,
     call,
