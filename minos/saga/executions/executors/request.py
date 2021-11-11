@@ -1,7 +1,13 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
-from typing import Optional
-from uuid import UUID
+from typing import (
+    Optional,
+)
+from uuid import (
+    UUID,
+)
 
 from dependency_injector.wiring import (
     Provide,
@@ -17,7 +23,9 @@ from minos.networks import (
     CommandBroker,
 )
 
-from ...context import SagaContext
+from ...context import (
+    SagaContext,
+)
 from ...definitions import (
     RequestCallBack,
     SagaOperation,
@@ -26,8 +34,12 @@ from ...exceptions import (
     ExecutorException,
     SagaFailedExecutionStepException,
 )
-from ...messages import SagaRequest
-from .abc import Executor
+from ...messages import (
+    SagaRequest,
+)
+from .abc import (
+    Executor,
+)
 
 
 class RequestExecutor(Executor):

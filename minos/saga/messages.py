@@ -1,12 +1,18 @@
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
-from enum import IntEnum
+from enum import (
+    IntEnum,
+)
 from typing import (
     Any,
     Optional,
     Union,
 )
-from uuid import UUID
+from uuid import (
+    UUID,
+)
 
 
 class SagaRequest:
