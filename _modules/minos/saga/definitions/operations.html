@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.definitions.operations &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -185,15 +185,6 @@
 <span class="p">)</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Callable</span><span class="p">)</span>
-
-
-<div class="viewcode-block" id="identity_fn"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.identity_fn">[docs]</a><span class="k">def</span> <span class="nf">identity_fn</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A identity function, that returns the same value without any transformation.</span>
-
-<span class="sd">    :param x: The input value.</span>
-<span class="sd">    :return: This function return the input value without any transformation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">x</span></div>
 
 
 <div class="viewcode-block" id="SagaOperation"><a class="viewcode-back" href="../../../../api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.SagaOperation">[docs]</a><span class="k">class</span> <span class="nc">SagaOperation</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.definitions.steps.abc module &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.definitions.steps.abc module &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -186,7 +186,7 @@
 <span id="minos-saga-definitions-steps-abc-module"></span><h1>minos.saga.definitions.steps.abc module<a class="headerlink" href="#module-minos.saga.definitions.steps.abc" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.definitions.steps.abc.SagaStep">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.definitions.steps.abc.</span></span><span class="sig-name descname"><span class="pre">SagaStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minos.saga.definitions.steps.abc.</span></span><span class="sig-name descname"><span class="pre">SagaStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">saga</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
 <p>Saga step class.</p>
 <dl class="py method">
@@ -236,7 +236,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.definitions.steps.abc.SagaStep.from_raw">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep.from_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.from_raw" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep.from_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.from_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a new instance from raw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -276,7 +276,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minos.saga.definitions.steps.abc.SagaStep.raw">
-<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.raw" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a raw representation of the instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -330,7 +330,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.definitions.steps.abc.SagaStep.validate">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.validate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/definitions/steps/abc.html#SagaStep.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.definitions.steps.abc.SagaStep.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the step is valid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>

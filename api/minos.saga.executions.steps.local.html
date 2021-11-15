@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.steps.local module &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.executions.steps.local module &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -186,22 +186,22 @@
 <span id="minos-saga-executions-steps-local-module"></span><h1>minos.saga.executions.steps.local module<a class="headerlink" href="#module-minos.saga.executions.steps.local" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">minos.saga.executions.steps.local.</span></span><span class="sig-name descname"><span class="pre">LocalSagaStepExecution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SagaStepStatus.Created</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">already_rollback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minos.saga.executions.steps.local.</span></span><span class="sig-name descname"><span class="pre">LocalSagaStepExecution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SagaStepStatus.Created</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">already_rollback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution" title="minos.saga.executions.steps.abc.SagaStepExecution"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.saga.executions.steps.abc.SagaStepExecution</span></code></a></p>
 <p>Local Saga Step Execution class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SagaStepStatus.Created</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">already_rollback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SagaStepStatus.Created</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">already_rollback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.definition">
-<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep" title="minos.saga.definitions.steps.local.LocalSagaStep"><span class="pre">minos.saga.definitions.steps.local.LocalSagaStep</span></a></em><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.definition" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="minos.saga.definitions.steps.local.html#minos.saga.definitions.steps.local.LocalSagaStep" title="minos.saga.definitions.steps.local.LocalSagaStep"><span class="pre">minos.saga.definitions.steps.local.LocalSagaStep</span></a></em><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.definition" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.execute">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.execute" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.execute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute the local saga step.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -222,7 +222,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.from_definition">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.from_definition" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.from_definition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a <code class="docutils literal notranslate"><span class="pre">SagaStepExecution</span></code> instance from the <code class="docutils literal notranslate"><span class="pre">SagaStep</span></code> definition.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -239,7 +239,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.from_raw">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.from_raw" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.from_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a new instance from a raw representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -259,7 +259,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.raw">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.raw" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute a raw representation of the instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -273,7 +273,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="minos.saga.executions.steps.local.LocalSagaStepExecution.rollback">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">rollback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution.rollback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.rollback" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rollback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/saga/executions/steps/local.html#LocalSagaStepExecution.rollback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.saga.executions.steps.local.LocalSagaStepExecution.rollback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rollback the local saga context.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

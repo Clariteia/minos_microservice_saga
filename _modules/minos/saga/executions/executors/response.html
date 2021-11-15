@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.response &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.executions.executors.response &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -165,10 +165,6 @@
     <span class="n">Optional</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CommandReply</span><span class="p">,</span>
-<span class="p">)</span>
-
 <span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
@@ -196,7 +192,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">operation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaOperation</span><span class="p">[</span><span class="n">ResponseCallBack</span><span class="p">]],</span>
         <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span>
-        <span class="n">reply</span><span class="p">:</span> <span class="n">CommandReply</span><span class="p">,</span>
+        <span class="n">response</span><span class="p">:</span> <span class="n">SagaResponse</span><span class="p">,</span>
         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
@@ -204,7 +200,7 @@
 
 <span class="sd">        :param operation: Operation to be executed.</span>
 <span class="sd">        :param context: Actual execution context.</span>
-<span class="sd">        :param reply: Command Reply which contains the response.</span>
+<span class="sd">        :param response: SagaResponse containing the response content.</span>
 <span class="sd">        :param args: Additional positional arguments.</span>
 <span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: An updated context instance.</span>
@@ -213,7 +209,6 @@
             <span class="k">return</span> <span class="n">context</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">SagaResponse</span><span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">reply</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
             <span class="n">context</span> <span class="o">=</span> <span class="n">SagaContext</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>  <span class="c1"># Needed to avoid mutability issues.</span>
             <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">ExecutorException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>

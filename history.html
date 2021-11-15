@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>History &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>History &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -111,6 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id13">0.1.0 (2021-10-08)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id14">0.1.1 (2021-10-19)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id15">0.2.0 (2021-11-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">0.3.0 (2021-11-15)</a></li>
 </ul>
 </li>
 </ul>
@@ -299,6 +300,20 @@
 <h2>0.2.0 (2021-11-08)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Add compatibility to <code class="docutils literal notranslate"><span class="pre">minos-microservice-common&gt;=0.2.0</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>0.3.0 (2021-11-15)<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SagaService</span></code> class (containing the reply handling logic).</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">transactional_command</span></code> middleware (to extend the saga transactionality to remote steps).</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">TransactionCommitter</span></code> class with the responsibility to orchestrate the transaction commitment process of the saga.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">minos-microservice-networks</span></code> and <code class="docutils literal notranslate"><span class="pre">minos-microservice-aggregate</span></code> as dependencies.</p></li>
+<li><p>Be compatible with <code class="docutils literal notranslate"><span class="pre">minos-microservice-common=^0.3.0</span></code></p></li>
+<li><p>Integrate <code class="docutils literal notranslate"><span class="pre">minos.aggregate.transaction</span></code> into <code class="docutils literal notranslate"><span class="pre">Executor</span></code>.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">reply:</span> <span class="pre">CommandReply</span></code> by <code class="docutils literal notranslate"><span class="pre">response:</span> <span class="pre">SagaResponse</span></code>.</p></li>
+<li><p>Store <code class="docutils literal notranslate"><span class="pre">service_name:</span> <span class="pre">str</span></code> as part of <code class="docutils literal notranslate"><span class="pre">SagaStepExecution</span></code> metadata.</p></li>
+<li><p>Deprecate callback argument on <code class="docutils literal notranslate"><span class="pre">Saga.commit</span></code> method in favor of <code class="docutils literal notranslate"><span class="pre">Saga.local_step</span></code>.</p></li>
 </ul>
 </div>
 </div>

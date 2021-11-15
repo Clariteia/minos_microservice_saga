@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.steps.conditional &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.executions.steps.conditional &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -181,6 +181,15 @@
     <span class="n">UUID</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">dependency_injector.wiring</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Provide</span><span class="p">,</span>
+    <span class="n">inject</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MinosConfig</span><span class="p">,</span>
+<span class="p">)</span>
+
 <span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
@@ -246,8 +255,13 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_inner</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_service_name</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Finished</span>
         <span class="k">return</span> <span class="n">context</span></div>
+
+    <span class="nd">@inject</span>
+    <span class="k">def</span> <span class="nf">_get_service_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MinosConfig</span> <span class="o">=</span> <span class="n">Provide</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">name</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_create_inner</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UUID</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">execution_uuid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UUID</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
@@ -256,7 +270,7 @@
             <span class="n">SagaExecution</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="n">executor</span> <span class="o">=</span> <span class="n">Executor</span><span class="p">()</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">Executor</span><span class="p">(</span><span class="n">execution_uuid</span><span class="o">=</span><span class="n">execution_uuid</span><span class="p">)</span>
 
         <span class="n">definition</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">alternative</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">if_then_alternatives</span><span class="p">:</span>

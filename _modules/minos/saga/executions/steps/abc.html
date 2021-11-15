@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.steps.abc &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.executions.steps.abc &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -172,6 +172,7 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Any</span><span class="p">,</span>
     <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
     <span class="n">Union</span><span class="p">,</span>
 <span class="p">)</span>
 
@@ -198,11 +199,17 @@
     <span class="sd">&quot;&quot;&quot;Saga Step Execution class.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="SagaStepExecution.__init__"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">definition</span><span class="p">:</span> <span class="n">SagaStep</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">SagaStepStatus</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Created</span><span class="p">,</span> <span class="n">already_rollback</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">definition</span><span class="p">:</span> <span class="n">SagaStep</span><span class="p">,</span>
+        <span class="n">status</span><span class="p">:</span> <span class="n">SagaStepStatus</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Created</span><span class="p">,</span>
+        <span class="n">service_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">already_rollback</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="n">definition</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span> <span class="o">=</span> <span class="n">already_rollback</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span> <span class="o">=</span> <span class="n">already_rollback</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span> <span class="o">=</span> <span class="n">service_name</span></div>
 
 <div class="viewcode-block" id="SagaStepExecution.from_raw"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.abc.html#minos.saga.executions.steps.abc.SagaStepExecution.from_raw">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">SagaStepExecution</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaStepExecution</span><span class="p">:</span>
@@ -292,6 +299,7 @@
             <span class="s2">&quot;cls&quot;</span><span class="p">:</span> <span class="n">classname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)),</span>
             <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span>
             <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span>
+            <span class="s2">&quot;service_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="p">,</span>
             <span class="s2">&quot;already_rollback&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span><span class="p">,</span>
         <span class="p">}</span>
 
@@ -302,6 +310,7 @@
         <span class="k">yield from</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">already_rollback</span><span class="p">,</span>
         <span class="p">)</span></div>
 </pre></div>

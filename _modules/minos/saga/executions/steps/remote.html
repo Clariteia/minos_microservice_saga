@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.steps.remote &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>minos.saga.executions.steps.remote &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -169,11 +169,6 @@
     <span class="n">Optional</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">minos.common</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CommandReply</span><span class="p">,</span>
-    <span class="n">CommandStatus</span><span class="p">,</span>
-<span class="p">)</span>
-
 <span class="kn">from</span> <span class="nn">...context</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">SagaContext</span><span class="p">,</span>
 <span class="p">)</span>
@@ -181,10 +176,14 @@
     <span class="n">RemoteSagaStep</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">...exceptions</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CommandReplyFailedException</span><span class="p">,</span>
     <span class="n">SagaFailedExecutionStepException</span><span class="p">,</span>
     <span class="n">SagaPausedExecutionStepException</span><span class="p">,</span>
+    <span class="n">SagaResponseException</span><span class="p">,</span>
     <span class="n">SagaRollbackExecutionStepException</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">...messages</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SagaResponse</span><span class="p">,</span>
+    <span class="n">SagaResponseStatus</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..executors</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RequestExecutor</span><span class="p">,</span>
@@ -203,11 +202,13 @@
 
     <span class="n">definition</span><span class="p">:</span> <span class="n">RemoteSagaStep</span>
 
-<div class="viewcode-block" id="RemoteSagaStepExecution.execute"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CommandReply</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+<div class="viewcode-block" id="RemoteSagaStepExecution.execute"><a class="viewcode-back" href="../../../../../api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.execute">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SagaResponse</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execution the remote step.</span>
 
 <span class="sd">        :param context: The execution context to be used during the execution.</span>
-<span class="sd">        :param reply: An optional command reply instance (to be consumed by the on_success method).</span>
+<span class="sd">        :param response: An optional command response instance (to be consumed by the on_success method).</span>
 <span class="sd">        :param args: Additional positional arguments.</span>
 <span class="sd">        :param kwargs: Additional named arguments.</span>
 <span class="sd">        :return: The updated context.</span>
@@ -215,20 +216,21 @@
 
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_execute</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">reply</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">PausedByOnExecute</span>
             <span class="k">raise</span> <span class="n">SagaPausedExecutionStepException</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">reply</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">CommandStatus</span><span class="o">.</span><span class="n">SYSTEM_ERROR</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">SagaResponseStatus</span><span class="o">.</span><span class="n">SYSTEM_ERROR</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">ErroredByOnExecute</span>
-            <span class="n">exc</span> <span class="o">=</span> <span class="n">CommandReplyFailedException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CommandReply failed with </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2"> status: </span><span class="si">{</span><span class="n">reply</span><span class="o">.</span><span class="n">data</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">exc</span> <span class="o">=</span> <span class="n">SagaResponseException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed with </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2"> status: </span><span class="si">{</span><span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">()</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">SagaFailedExecutionStepException</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">reply</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">CommandStatus</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
-            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_success</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">reply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">SagaResponseStatus</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_success</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_error</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">reply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_error</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">service_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Finished</span>
         <span class="k">return</span> <span class="n">context</span></div>
 
@@ -245,12 +247,12 @@
             <span class="k">raise</span> <span class="n">exc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">FinishedOnExecute</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">CommandReply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">SagaResponse</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">RunningOnSuccess</span>
         <span class="n">executor</span> <span class="o">=</span> <span class="n">ResponseExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_success_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_success_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">SagaFailedExecutionStepException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">ErroredOnSuccess</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -258,12 +260,12 @@
 
         <span class="k">return</span> <span class="n">context</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">reply</span><span class="p">:</span> <span class="n">CommandReply</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">SagaResponse</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">RunningOnError</span>
         <span class="n">executor</span> <span class="o">=</span> <span class="n">ResponseExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_error_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_error_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">SagaFailedExecutionStepException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">ErroredOnError</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

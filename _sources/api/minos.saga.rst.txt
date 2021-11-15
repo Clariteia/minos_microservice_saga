@@ -25,3 +25,5 @@ Submodules
    minos.saga.exceptions
    minos.saga.manager
    minos.saga.messages
+   minos.saga.middleware
+   minos.saga.services

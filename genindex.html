@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Minos Microservice Saga 0.2.0 documentation</title>
+  <title>Index &mdash; Minos Microservice Saga 0.3.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
             
           
@@ -211,8 +211,6 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyOnSagaException.__init__">(minos.saga.exceptions.AlreadyOnSagaException method)</a>
 </li>
-        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.__init__">(minos.saga.exceptions.CommandReplyFailedException method)</a>
-</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.__init__">(minos.saga.exceptions.EmptySagaException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.__init__">(minos.saga.exceptions.EmptySagaStepException method)</a>
@@ -249,6 +247,8 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaPausedExecutionStepException.__init__">(minos.saga.exceptions.SagaPausedExecutionStepException method)</a>
 </li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaResponseException.__init__">(minos.saga.exceptions.SagaResponseException method)</a>
+</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException.__init__">(minos.saga.exceptions.SagaRollbackExecutionException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionStepException.__init__">(minos.saga.exceptions.SagaRollbackExecutionStepException method)</a>
@@ -258,6 +258,8 @@
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepExecutionException.__init__">(minos.saga.exceptions.SagaStepExecutionException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.UndefinedOnExecuteException.__init__">(minos.saga.exceptions.UndefinedOnExecuteException method)</a>
+</li>
+        <li><a href="api/minos.saga.executions.commit.html#minos.saga.executions.commit.TransactionCommitter.__init__">(minos.saga.executions.commit.TransactionCommitter method)</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.__init__">(minos.saga.executions.executors.abc.Executor method)</a>
 </li>
@@ -285,6 +287,8 @@
 </li>
         <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse.__init__">(minos.saga.messages.SagaResponse method)</a>
 </li>
+        <li><a href="api/minos.saga.services.html#minos.saga.services.SagaService.__init__">(minos.saga.services.SagaService method)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -304,8 +308,6 @@
 
       <ul>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyOnSagaException.args">(minos.saga.exceptions.AlreadyOnSagaException attribute)</a>
-</li>
-        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.args">(minos.saga.exceptions.CommandReplyFailedException attribute)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.args">(minos.saga.exceptions.EmptySagaException attribute)</a>
 </li>
@@ -343,6 +345,8 @@
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaPausedExecutionStepException.args">(minos.saga.exceptions.SagaPausedExecutionStepException attribute)</a>
 </li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaResponseException.args">(minos.saga.exceptions.SagaResponseException attribute)</a>
+</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException.args">(minos.saga.exceptions.SagaRollbackExecutionException attribute)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionStepException.args">(minos.saga.exceptions.SagaRollbackExecutionStepException attribute)</a>
@@ -374,8 +378,6 @@
 </li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.clear">clear() (minos.saga.context.SagaContext method)</a>
 </li>
-      <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException">CommandReplyFailedException</a>
-</li>
       <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.commit">commit() (minos.saga.definitions.saga.Saga method)</a>
 
       <ul>
@@ -387,9 +389,9 @@
 </li>
         <li><a href="api/minos.saga.definitions.steps.remote.html#minos.saga.definitions.steps.remote.RemoteSagaStep.commit">(minos.saga.definitions.steps.remote.RemoteSagaStep method)</a>
 </li>
-      </ul></li>
-      <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.committed">committed (minos.saga.definitions.saga.Saga property)</a>
+        <li><a href="api/minos.saga.executions.commit.html#minos.saga.executions.commit.TransactionCommitter.commit">(minos.saga.executions.commit.TransactionCommitter method)</a>
 </li>
+      </ul></li>
       <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.conditional_step">conditional_step() (minos.saga.definitions.saga.Saga method)</a>
 
       <ul>
@@ -482,14 +484,14 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.exec_function">exec_function() (minos.saga.executions.executors.abc.Executor static method)</a>
+      <li><a href="api/minos.saga.executions.executors.abc.html#minos.saga.executions.executors.abc.Executor.exec_function">exec_function() (minos.saga.executions.executors.abc.Executor method)</a>
 
       <ul>
-        <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor.exec_function">(minos.saga.executions.executors.local.LocalExecutor static method)</a>
+        <li><a href="api/minos.saga.executions.executors.local.html#minos.saga.executions.executors.local.LocalExecutor.exec_function">(minos.saga.executions.executors.local.LocalExecutor method)</a>
 </li>
-        <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor.exec_function">(minos.saga.executions.executors.request.RequestExecutor static method)</a>
+        <li><a href="api/minos.saga.executions.executors.request.html#minos.saga.executions.executors.request.RequestExecutor.exec_function">(minos.saga.executions.executors.request.RequestExecutor method)</a>
 </li>
-        <li><a href="api/minos.saga.executions.executors.response.html#minos.saga.executions.executors.response.ResponseExecutor.exec_function">(minos.saga.executions.executors.response.ResponseExecutor static method)</a>
+        <li><a href="api/minos.saga.executions.executors.response.html#minos.saga.executions.executors.response.ResponseExecutor.exec_function">(minos.saga.executions.executors.response.ResponseExecutor method)</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.executions.saga.html#minos.saga.executions.saga.SagaExecution.execute">execute() (minos.saga.executions.saga.SagaExecution method)</a>
@@ -604,8 +606,6 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.definitions.operations.html#minos.saga.definitions.operations.identity_fn">identity_fn() (in module minos.saga.definitions.operations)</a>
-</li>
       <li><a href="api/minos.saga.definitions.steps.conditional.html#minos.saga.definitions.steps.conditional.ConditionalSagaStep.if_then">if_then() (minos.saga.definitions.steps.conditional.ConditionalSagaStep method)</a>
 </li>
   </ul></td>
@@ -755,6 +755,13 @@
 </li>
       </ul></li>
       <li>
+    minos.saga.executions.commit
+
+      <ul>
+        <li><a href="api/minos.saga.executions.commit.html#module-minos.saga.executions.commit">module</a>
+</li>
+      </ul></li>
+      <li>
     minos.saga.executions.executors
 
       <ul>
@@ -824,8 +831,6 @@
         <li><a href="api/minos.saga.executions.steps.conditional.html#module-minos.saga.executions.steps.conditional">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     minos.saga.executions.steps.local
 
@@ -833,6 +838,8 @@
         <li><a href="api/minos.saga.executions.steps.local.html#module-minos.saga.executions.steps.local">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     minos.saga.executions.steps.remote
 
@@ -859,6 +866,20 @@
 
       <ul>
         <li><a href="api/minos.saga.messages.html#module-minos.saga.messages">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.middleware
+
+      <ul>
+        <li><a href="api/minos.saga.middleware.html#module-minos.saga.middleware">module</a>
+</li>
+      </ul></li>
+      <li>
+    minos.saga.services
+
+      <ul>
+        <li><a href="api/minos.saga.services.html#module-minos.saga.services">module</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.model_type">model_type (minos.saga.context.SagaContext attribute)</a>
@@ -895,6 +916,8 @@
 </li>
         <li><a href="api/minos.saga.executions.html#module-minos.saga.executions">minos.saga.executions</a>
 </li>
+        <li><a href="api/minos.saga.executions.commit.html#module-minos.saga.executions.commit">minos.saga.executions.commit</a>
+</li>
         <li><a href="api/minos.saga.executions.executors.html#module-minos.saga.executions.executors">minos.saga.executions.executors</a>
 </li>
         <li><a href="api/minos.saga.executions.executors.abc.html#module-minos.saga.executions.executors.abc">minos.saga.executions.executors.abc</a>
@@ -924,6 +947,10 @@
         <li><a href="api/minos.saga.manager.html#module-minos.saga.manager">minos.saga.manager</a>
 </li>
         <li><a href="api/minos.saga.messages.html#module-minos.saga.messages">minos.saga.messages</a>
+</li>
+        <li><a href="api/minos.saga.middleware.html#module-minos.saga.middleware">minos.saga.middleware</a>
+</li>
+        <li><a href="api/minos.saga.services.html#module-minos.saga.services">minos.saga.services</a>
 </li>
       </ul></li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.MultipleElseThenException">MultipleElseThenException</a>
@@ -1020,6 +1047,8 @@
         <li><a href="api/minos.saga.executions.steps.remote.html#minos.saga.executions.steps.remote.RemoteSagaStepExecution.raw">(minos.saga.executions.steps.remote.RemoteSagaStepExecution property)</a>
 </li>
       </ul></li>
+      <li><a href="api/minos.saga.executions.commit.html#minos.saga.executions.commit.TransactionCommitter.reject">reject() (minos.saga.executions.commit.TransactionCommitter method)</a>
+</li>
       <li><a href="api/minos.saga.definitions.saga.html#minos.saga.definitions.saga.Saga.remote_step">remote_step() (minos.saga.definitions.saga.Saga method)</a>
 
       <ul>
@@ -1108,6 +1137,8 @@
 </li>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse">SagaResponse (class in minos.saga.messages)</a>
 </li>
+      <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaResponseException">SagaResponseException</a>
+</li>
       <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponseStatus">SagaResponseStatus (class in minos.saga.messages)</a>
 </li>
   </ul></td>
@@ -1115,6 +1146,8 @@
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException">SagaRollbackExecutionException</a>
 </li>
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionStepException">SagaRollbackExecutionStepException</a>
+</li>
+      <li><a href="api/minos.saga.services.html#minos.saga.services.SagaService">SagaService (class in minos.saga.services)</a>
 </li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStatus">SagaStatus (class in minos.saga.executions.status)</a>
 </li>
@@ -1127,6 +1160,8 @@
       <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaStepExecutionException">SagaStepExecutionException</a>
 </li>
       <li><a href="api/minos.saga.executions.status.html#minos.saga.executions.status.SagaStepStatus">SagaStepStatus (class in minos.saga.executions.status)</a>
+</li>
+      <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse.service_name">service_name (minos.saga.messages.SagaResponse property)</a>
 </li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.setdefault">setdefault() (minos.saga.context.SagaContext method)</a>
 </li>
@@ -1162,9 +1197,15 @@
 </li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.to_avro_bytes">to_avro_bytes() (minos.saga.context.SagaContext class method)</a>
 </li>
+      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.to_avro_str">to_avro_str() (minos.saga.context.SagaContext class method)</a>
+</li>
+      <li><a href="api/minos.saga.middleware.html#minos.saga.middleware.transactional_command">transactional_command() (in module minos.saga.middleware)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.to_avro_str">to_avro_str() (minos.saga.context.SagaContext class method)</a>
+      <li><a href="api/minos.saga.executions.commit.html#minos.saga.executions.commit.TransactionCommitter">TransactionCommitter (class in minos.saga.executions.commit)</a>
+</li>
+      <li><a href="api/minos.saga.executions.commit.html#minos.saga.executions.commit.TransactionCommitter.transactions">transactions (minos.saga.executions.commit.TransactionCommitter attribute)</a>
 </li>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.type_hints">type_hints (minos.saga.context.SagaContext attribute)</a>
 </li>
@@ -1181,6 +1222,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minos.saga.context.html#minos.saga.context.SagaContext.update">update() (minos.saga.context.SagaContext method)</a>
+</li>
+      <li><a href="api/minos.saga.messages.html#minos.saga.messages.SagaResponse.uuid">uuid (minos.saga.messages.SagaResponse property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1219,8 +1262,6 @@
       <ul>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.AlreadyOnSagaException.with_traceback">(minos.saga.exceptions.AlreadyOnSagaException method)</a>
 </li>
-        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.CommandReplyFailedException.with_traceback">(minos.saga.exceptions.CommandReplyFailedException method)</a>
-</li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaException.with_traceback">(minos.saga.exceptions.EmptySagaException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.EmptySagaStepException.with_traceback">(minos.saga.exceptions.EmptySagaStepException method)</a>
@@ -1256,6 +1297,8 @@
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaNotDefinedException.with_traceback">(minos.saga.exceptions.SagaNotDefinedException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaPausedExecutionStepException.with_traceback">(minos.saga.exceptions.SagaPausedExecutionStepException method)</a>
+</li>
+        <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaResponseException.with_traceback">(minos.saga.exceptions.SagaResponseException method)</a>
 </li>
         <li><a href="api/minos.saga.exceptions.html#minos.saga.exceptions.SagaRollbackExecutionException.with_traceback">(minos.saga.exceptions.SagaRollbackExecutionException method)</a>
 </li>
