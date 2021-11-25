@@ -208,7 +208,7 @@ python-versions = ">=3.6.1"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.7"
+version = "2.0.8"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -476,7 +476,7 @@ minos-microservice-networks = ">=0.3.0,<0.4.0"
 
 [[package]]
 name = "minos-microservice-common"
-version = "0.3.0"
+version = "0.3.1"
 description = "Python Package with common Classes and Utilities used in Minos Microservices."
 category = "main"
 optional = false
@@ -498,16 +498,21 @@ version = "0.3.0"
 description = "Python Package with the common network classes and utilities used in Minos Microservice."
 category = "main"
 optional = false
-python-versions = ">=3.9,<4.0"
+python-versions = "^3.9"
+develop = true
 
 [package.dependencies]
-aiohttp = ">=3.7.4,<4.0.0"
-aiokafka = ">=0.7.0,<0.8.0"
-aiomisc = ">=14.0.3,<15.0.0"
-aiopg = ">=1.2.1,<2.0.0"
-crontab = ">=0.23.0,<0.24.0"
-dependency-injector = ">=4.32.2,<5.0.0"
-minos-microservice-common = ">=0.3.0,<0.4.0"
+aiohttp = "^3.7.4"
+aiokafka = "^0.7.0"
+aiomisc = "^14.0.3"
+aiopg = "^1.2.1"
+crontab = "^0.23.0"
+dependency-injector = "^4.32.2"
+minos-microservice-common = "^0.3.0"
+
+[package.source]
+type = "directory"
+url = "../minos_microservice_networks"
 
 [[package]]
 name = "mistune"
@@ -961,7 +966,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0cc9a2f9bb988c91d95ce3ee1521ccbae3d43fcd435d1c470b1dba37853df5e3"
+content-hash = "074c62251403aeefd860b09c19a70f0a3d3ca82e21c7ae82e2c13badd06920e6"
 
 [metadata.files]
 aiohttp = [
@@ -1170,8 +1175,8 @@ cfgv = [
     {file = "cfgv-3.3.1.tar.gz", hash = "sha256:f5a830efb9ce7a445376bb66ec94c638a9787422f96264c98edc6bdeed8ab736"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.7.tar.gz", hash = "sha256:e019de665e2bcf9c2b64e2e5aa025fa991da8720daa3c1138cadd2fd1856aed0"},
-    {file = "charset_normalizer-2.0.7-py3-none-any.whl", hash = "sha256:f7af805c321bfa1ce6714c51f254e0d5bb5e5834039bc17db7ebe3a4cec9492b"},
+    {file = "charset-normalizer-2.0.8.tar.gz", hash = "sha256:735e240d9a8506778cd7a453d97e817e536bb1fc29f4f6961ce297b9c7a917b0"},
+    {file = "charset_normalizer-2.0.8-py3-none-any.whl", hash = "sha256:83fcdeb225499d6344c8f7f34684c2981270beacc32ede2e669e94f7fa544405"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1528,13 +1533,10 @@ minos-microservice-aggregate = [
     {file = "minos_microservice_aggregate-0.2.2.tar.gz", hash = "sha256:73ccc2a10d93c359b560f7b4a4e905c657e8fe816bad5baf457eaf95504f0b2a"},
 ]
 minos-microservice-common = [
-    {file = "minos_microservice_common-0.3.0-py3-none-any.whl", hash = "sha256:0951b79119ac49a79341fb9de7864f90830f2ff55fa94743d46b0b1aca17eb66"},
-    {file = "minos_microservice_common-0.3.0.tar.gz", hash = "sha256:0f0d601b789e6231d482660278e4bd07160bf656c785c5fd2d5c937a112748b8"},
+    {file = "minos_microservice_common-0.3.1-py3-none-any.whl", hash = "sha256:92c8f375859b41fbc217432694a1f23c3c0db49f391e2e0b880243d7ece0b292"},
+    {file = "minos_microservice_common-0.3.1.tar.gz", hash = "sha256:3a408a585e1ae99c663efd6b127cd220b54305f3db0b63910e45933d5446e1d2"},
 ]
-minos-microservice-networks = [
-    {file = "minos_microservice_networks-0.3.0-py3-none-any.whl", hash = "sha256:7e67126454ccf7dd83b343174c17968cbc02087d0c7e2298973ce6dbbeab0090"},
-    {file = "minos_microservice_networks-0.3.0.tar.gz", hash = "sha256:3dc9e75599d748bc0ddf386cc6d9ce03362b9bfa03b441cf63898d4382588370"},
-]
+minos-microservice-networks = []
 mistune = [
     {file = "mistune-0.8.4-py2.py3-none-any.whl", hash = "sha256:88a1051873018da288eee8538d476dffe1262495144b33ecb586c4ab266bb8d4"},
     {file = "mistune-0.8.4.tar.gz", hash = "sha256:59a3429db53c50b5c6bcc8a07f8848cb00d7dc8bdb431a4ab41920d201d4756e"},

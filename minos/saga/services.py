@@ -7,6 +7,7 @@ from minos.common import (
     MinosConfig,
 )
 from minos.networks import (
+    BrokerMessage,
     BrokerRequest,
     EnrouteDecorator,
     enroute,
@@ -30,6 +31,6 @@ class SagaService:
         return {cls.__reply__.__name__: {enroute.broker.command(f"{config.service.name}Reply")}}
 
     async def __reply__(self, request: BrokerRequest) -> None:
-        raw = request.raw
-        response = SagaResponse(raw.data, raw.status, raw.service_name, raw.saga)
+        message: BrokerMessage = request.raw
+        response = SagaResponse(message.data, message.status, [v["service_name"] for v in message.trace], message.saga)
         await self.saga_manager.run(response=response, pause_on_disk=True, raise_on_error=False, return_execution=False)

@@ -97,8 +97,8 @@ class TransactionCommitter:
 
     @staticmethod
     async def _get_response(handler: DynamicBroker, count: int, **kwargs) -> bool:
-        entries = await handler.get_many(count, **kwargs)
-        return all(entry.data.ok for entry in entries)
+        messages = await handler.receive_many(count, **kwargs)
+        return all(message.ok for message in messages)
 
     @cached_property
     def transactions(self) -> list[tuple[UUID, str]]:
@@ -116,11 +116,16 @@ class TransactionCommitter:
                     inner = step.inner
                     return _fn(inner.uuid, inner.executed_steps)
 
-                pair = (uuid, step.service_name)
-                if pair in uniques:
-                    continue
-                transactions.append(pair)
-                uniques.add(pair)
+                involved_service_names = step.service_name
+                if not isinstance(involved_service_names, list):
+                    involved_service_names = [involved_service_names]
+
+                for service_name in involved_service_names:
+                    pair = (uuid, service_name)
+                    if pair in uniques:
+                        continue
+                    transactions.append(pair)
+                    uniques.add(pair)
 
         _fn(self.execution_uuid, self.executed_steps)
         return transactions

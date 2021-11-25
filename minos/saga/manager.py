@@ -24,6 +24,7 @@ from minos.common import (
 )
 from minos.networks import (
     USER_CONTEXT_VAR,
+    BrokerMessage,
     DynamicBroker,
     DynamicBrokerPool,
 )
@@ -210,15 +211,14 @@ class SagaManager(MinosSetup):
 
     @staticmethod
     async def _get_response(handler: DynamicBroker, execution: SagaExecution, **kwargs) -> SagaResponse:
-        reply = None
-        while reply is None or reply.saga != execution.uuid:
+        message: Optional[BrokerMessage] = None
+        while message is None or message.saga != execution.uuid:
             try:
-                entry = await handler.get_one(**kwargs)
+                message = await handler.receive(**kwargs)
             except Exception as exc:
                 execution.status = SagaStatus.Errored
                 raise SagaFailedExecutionException(exc)
-            reply = entry.data
 
-        response = SagaResponse(reply.data, reply.status, reply.service_name)
+        response = SagaResponse(message.data, message.status, [v["service_name"] for v in message.trace])
 
         return response
