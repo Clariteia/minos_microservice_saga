@@ -32,5 +32,5 @@ class SagaService:
 
     async def __reply__(self, request: BrokerRequest) -> None:
         message: BrokerMessage = request.raw
-        response = SagaResponse(message.data, message.status, [v["service_name"] for v in message.trace], message.saga)
+        response = SagaResponse(message.data, message.status, message.service_name, message.identifier)
         await self.saga_manager.run(response=response, pause_on_disk=True, raise_on_error=False, return_execution=False)

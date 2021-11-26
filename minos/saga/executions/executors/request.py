@@ -90,7 +90,8 @@ class RequestExecutor(Executor):
             await self.broker_publisher.send(
                 topic=request.target,
                 data=await request.content(),
-                saga=self.execution_uuid,
+                identifier=self.execution_uuid,
+                headers={"saga": "yes"},
                 user=self.user,
                 reply_topic=reply_topic,
             )

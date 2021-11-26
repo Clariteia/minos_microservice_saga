@@ -68,7 +68,7 @@ class SagaResponse:
         self,
         content: Any = None,
         status: Optional[Union[int, SagaResponseStatus]] = None,
-        service_name: Optional[list[str]] = None,
+        service_name: Optional[str] = None,
         uuid: Optional[UUID] = None,
         *args,
         **kwargs,
