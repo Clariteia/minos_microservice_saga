@@ -131,3 +131,13 @@ History
 * Take advantage of concurrent remote broker calls to improve the `TransactionCommiter` performance.
 * Expose `autocommit: bool = True` argument on `SagaManager.run(...)` method.
 * Add support for `minos-microservice-networks=^0.3.0`.
+
+0.3.3 (2021-11-26)
+------------------
+
+* Fix bug related with empty `ConditionalSagaStep.from_raw` and empty `else_then`.
+
+0.3.4 (2021-11-26)
+------------------
+
+* Fix bug related with `TransactionCommitter` and `ConditionalSagaStepExecution`.
