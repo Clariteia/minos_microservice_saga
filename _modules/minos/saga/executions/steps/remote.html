@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.steps.remote &mdash; Minos Microservice Saga 0.3.4 documentation</title>
+  <title>minos.saga.executions.steps.remote &mdash; Minos Microservice Saga 0.3.5 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.4
+                0.3.5
               </div>
             
           
@@ -185,6 +185,9 @@
     <span class="n">SagaResponse</span><span class="p">,</span>
     <span class="n">SagaResponseStatus</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_service_name</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..executors</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RequestExecutor</span><span class="p">,</span>
     <span class="n">ResponseExecutor</span><span class="p">,</span>
@@ -220,6 +223,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">PausedByOnExecute</span>
             <span class="k">raise</span> <span class="n">SagaPausedExecutionStepException</span><span class="p">()</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">related_services</span> <span class="o">|=</span> <span class="n">response</span><span class="o">.</span><span class="n">related_services</span>
+
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">SagaResponseStatus</span><span class="o">.</span><span class="n">SYSTEM_ERROR</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">ErroredByOnExecute</span>
             <span class="n">exc</span> <span class="o">=</span> <span class="n">SagaResponseException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed with </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="si">!s}</span><span class="s2"> status: </span><span class="si">{</span><span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">()</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -230,7 +235,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_on_error</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">service_name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">service_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">Finished</span>
         <span class="k">return</span> <span class="n">context</span></div>
 
@@ -240,6 +244,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">RunningOnExecute</span>
         <span class="n">executor</span> <span class="o">=</span> <span class="n">RequestExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">related_services</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">get_service_name</span><span class="p">())</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_execute_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">SagaFailedExecutionStepException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
@@ -250,6 +255,7 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">SagaResponse</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">RunningOnSuccess</span>
         <span class="n">executor</span> <span class="o">=</span> <span class="n">ResponseExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">related_services</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">get_service_name</span><span class="p">())</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_success_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
@@ -263,6 +269,7 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_on_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">SagaContext</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">SagaResponse</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SagaContext</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">SagaStepStatus</span><span class="o">.</span><span class="n">RunningOnError</span>
         <span class="n">executor</span> <span class="o">=</span> <span class="n">ResponseExecutor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">related_services</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">get_service_name</span><span class="p">())</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">context</span> <span class="o">=</span> <span class="k">await</span> <span class="n">executor</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">on_error_operation</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>

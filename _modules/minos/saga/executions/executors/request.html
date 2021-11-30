@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.saga.executions.executors.request &mdash; Minos Microservice Saga 0.3.4 documentation</title>
+  <title>minos.saga.executions.executors.request &mdash; Minos Microservice Saga 0.3.5 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.3.4
+                0.3.5
               </div>
             
           
@@ -182,7 +182,8 @@
     <span class="n">NotProvidedException</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">minos.networks</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">REPLY_TOPIC_CONTEXT_VAR</span><span class="p">,</span>
+    <span class="n">REQUEST_HEADERS_CONTEXT_VAR</span><span class="p">,</span>
+    <span class="n">REQUEST_REPLY_TOPIC_CONTEXT_VAR</span><span class="p">,</span>
     <span class="n">BrokerPublisher</span><span class="p">,</span>
 <span class="p">)</span>
 
@@ -245,17 +246,24 @@
 
     <span class="c1"># noinspection PyMethodOverriding</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SagaRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">reply_topic</span> <span class="o">=</span> <span class="n">REPLY_TOPIC_CONTEXT_VAR</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">reply_topic</span> <span class="o">=</span> <span class="n">REQUEST_REPLY_TOPIC_CONTEXT_VAR</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">reply_topic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">reply_topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_default_reply_topic</span><span class="p">()</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">(</span><span class="n">REQUEST_HEADERS_CONTEXT_VAR</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">dict</span><span class="p">())</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;saga&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;transactions&quot;</span><span class="p">):</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;transactions&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;,</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span><span class="si">!s}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;transactions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span><span class="si">!s}</span><span class="s2">&quot;</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">broker_publisher</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
                 <span class="n">topic</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
                 <span class="n">data</span><span class="o">=</span><span class="k">await</span> <span class="n">request</span><span class="o">.</span><span class="n">content</span><span class="p">(),</span>
-                <span class="n">saga</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">execution_uuid</span><span class="p">,</span>
                 <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
                 <span class="n">reply_topic</span><span class="o">=</span><span class="n">reply_topic</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">ExecutorException</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>

@@ -27,3 +27,4 @@ Submodules
    minos.saga.messages
    minos.saga.middleware
    minos.saga.services
+   minos.saga.utils
